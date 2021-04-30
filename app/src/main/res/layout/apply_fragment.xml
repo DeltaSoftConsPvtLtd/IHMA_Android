@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.ilaftalkful.ihma.viewmodel.ApplyViewModel" />        <variable
+        name="fragment"
+        type="com.ilaftalkful.ihma.view.home.ApplyFragment" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_img"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_blue_layout"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginTop="200dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="SoH"
+                android:textSize="25dp"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/white"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/courses"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainrecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Choose"
+                android:textSize="35dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="Your Course"
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:hint="@string/search"
+                android:textSize="20sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:padding="20dp"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:background="@drawable/accent_button_bg">
+
+            </EditText>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</layout>
+

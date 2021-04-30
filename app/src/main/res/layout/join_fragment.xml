@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ilaftalkful.ihma.viewmodel.JoinViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@color/colorPrimaryDark"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_layout"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_marginTop="100dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Congratulations"
+                        android:textSize="35dp"
+                        android:layout_marginTop="100dp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Your membership is approved"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Now pay your membership fee"
+                        android:textStyle="bold"
+                        android:layout_marginTop="40dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:gravity="center" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/annual_id"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:text="Annual"
+                            android:textSize="20dp"
+                            android:padding="5dp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:background="@drawable/leftrounded_button_bg">
+
+                        </TextView>
+                        <TextView
+                            android:id="@+id/lifetime_id"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:text="Lifetime"
+                            android:padding="5dp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/rightrounded_button_bg">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Annual Membership Fee"
+                        android:layout_marginTop="30dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1000"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:textSize="35dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:padding="3dp"
+                        android:text="Pay Now"
+                        android:background="@drawable/payment_button_bg"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textAllCaps="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/jacinda"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true" />
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>

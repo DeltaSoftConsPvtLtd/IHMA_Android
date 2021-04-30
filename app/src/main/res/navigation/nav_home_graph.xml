@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_home_graph.xml"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.ilaftalkful.ihma.view.home.HomeFragment"
+        tools:layout="@layout/home_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment"
+        android:name="com.ilaftalkful.ihma.view.home.JoinFragment"
+        tools:layout="@layout/join_fragment">
+    </fragment>>
+
+    <fragment
+        android:id="@+id/apply_fragment"
+        android:name="com.ilaftalkful.ihma.view.home.ApplyFragment"
+        tools:layout="@layout/apply_fragment">
+    </fragment>
+</navigation>

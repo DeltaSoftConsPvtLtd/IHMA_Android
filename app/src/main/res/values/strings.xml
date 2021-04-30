@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">IHMA</string>
+
+    <string name="travel_insurence">Travel Insurence</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="dashboard_fragment_label">Home</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="products_fragment_label">Products</string>
+    <string name="splash_fragment_label">Splash</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="create_account">Create account</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="email">Email</string>
+    <string name="enter_your_mobile_number">Enter Your Mobile Number</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="mm">MM</string>
+    <string name="dd">DD</string>
+    <string name="yyyy">YYYY</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="civil_id">Civil ID</string>
+    <string name="login_fingerprint_face_id">Login Fingerprint/ Face ID</string>
+    <string name="register">REGISTER</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="travel_claims">Travel Claims</string>
+    <string name="available_24hrs_7_days">Available 24Hrs ,/ 7 Days</string>
+    <string name="comtact_no">Comtact No</string>
+    <string name="dont_have_an_account">Dont have an account ?</string>
+    <string name="login_as_guest">Login as Guest</string>
+    <string name="forget_password">FORGET PASSWORD</string>
+    <string name="login_fragment_label">Login</string>
+    <string name="save">SAVE</string>
+    <string name="buy_insurence">Buy Insurance</string>
+    <string name="claims">Claims</string>
+    <string name="motor_insurence">Motor Insurance</string>
+    <string name="quote">Quote</string>
+    <string name="renew">Renew</string>
+    <string name="corporate_qoutes">Corporate Qoutes</string>
+    <string name="hospital_network">Hospital Network</string>
+    <string name="assistance_for_claim">Assistance for claim</string>
+    <string name="login_or_register">Login or Register</string>
+    <string name="loged_in_as_guest">Loged in as guest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="fga_insurance">FGA Insurance</string>
+    <string name="marine_insurence">Marine Insurance</string>
+    <string name="login_or_register_first">To user this service ,you need to login or register first</string>
+    <string name="courses">Homeopathy is a medical science developed by Dr. Samuel Hahnemann (1755-1843), a German physician.</string>
+    <string name="search">Search</string>
+</resources>

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.room:room-ktx:2.2.5@aar">
+    <CLASSES>
+      <root url="jar:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/jars/classes.jar!/" />
+      <root url="file:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/res" />
+      <root url="file:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/0559c7610873b62ec046f454659aa2e1/jetified-room-ktx-2.2.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/modules-2/files-2.1/androidx.room/room-ktx/2.2.5/ecf9c1db6fed7ad3a6f65a007d4c6edcdbee83e1/room-ktx-2.2.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.room/room-ktx/2.2.5/ecf9c1db6fed7ad3a6f65a007d4c6edcdbee83e1/room-ktx-2.2.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

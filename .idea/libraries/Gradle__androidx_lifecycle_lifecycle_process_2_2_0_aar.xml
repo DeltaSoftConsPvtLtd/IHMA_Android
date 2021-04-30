@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.lifecycle:lifecycle-process:2.2.0@aar">
+    <CLASSES>
+      <root url="jar:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/jars/classes.jar!/" />
+      <root url="file:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/res" />
+      <root url="file:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/f855a0620e6e90f44a5fffc6ccb9e2d7/jetified-lifecycle-process-2.2.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///Volumes/Saneesh/WiSeItAndroid-WiSePlatform_v3_Dev/gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-process/2.2.0/87ad54b3a3ab3e83595fd66749e92beaf8123dd9/lifecycle-process-2.2.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.lifecycle/lifecycle-process/2.2.0/87ad54b3a3ab3e83595fd66749e92beaf8123dd9/lifecycle-process-2.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
