@@ -2,28 +2,34 @@ package com.ilaftalkful.ihma.view.home
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.AppBarLayout.Behavior.DragCallback
 import com.ilaftalkful.ihma.R
 import com.ilaftalkful.ihma.bindingAdaptor.CourseAdapter
 import com.ilaftalkful.ihma.databinding.ApplyFragmentBinding
-import com.ilaftalkful.ihma.viewmodel.ApplyViewModel
 import com.ilaftalkful.ihma.model.CoursesModel
+import com.ilaftalkful.ihma.viewmodel.ApplyViewModel
+import kotlinx.android.synthetic.main.apply_fragment.*
+import kotlinx.android.synthetic.main.dashboard_fragment.*
+
 
 class ApplyFragment : Fragment() {
 
-    private var viewManager = LinearLayoutManager(context)
+
     // lateinit var mainrecycler: RecyclerView
     val viewModel: ApplyViewModel by viewModels()
     var mainrecycler: RecyclerView? = null
+    var adapter:CourseAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,39 +43,39 @@ class ApplyFragment : Fragment() {
         )
         productsFragmentBinding.lifecycleOwner = this
         productsFragmentBinding.viewModel = viewModel
-        productsFragmentBinding.mainrecycler
-        // val factory = ApplyViewModelFactory()
+        adapter = CourseAdapter(viewModel, this)
+        productsFragmentBinding.mainrecycler.adapter=adapter
         addData()
-        initialiseAdapter()
+        observeData()
 
         return productsFragmentBinding.root
     }
 
-    private fun initialiseAdapter() {
-        mainrecycler?.layoutManager = viewManager
-        observeData()
-    }
+
+
+
 
     private fun observeData() {
         viewModel.lst.observe(viewLifecycleOwner, androidx.lifecycle.Observer{
             Log.i("data",it.toString())
-            mainrecycler?.adapter = CourseAdapter(viewModel, it, this)
+            adapter?.setData(it)
         })
     }
 
     private fun addData() {
-
         val title="Haiii"
-        val description="i am using kotlin with mvvm"
+        val description="i am using kotlin with mvvm dhfhfgh fghgfh fg fhgfhgfgh hf ggfhghgfh ghgfhhg fgh dfhfhhdf"
         if(title.isNullOrBlank()){
             Toast.makeText(context,"Enter value!", Toast.LENGTH_LONG).show()
         }else{
             val blog= CoursesModel(title,description)
             viewModel.add(blog)
-            mainrecycler?.adapter?.notifyDataSetChanged()
         }
 
     }
+
+
+
 
 
 }

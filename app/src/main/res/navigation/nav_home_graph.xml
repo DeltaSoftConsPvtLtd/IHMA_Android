@@ -15,7 +15,7 @@
         android:id="@+id/join_fragment"
         android:name="com.ilaftalkful.ihma.view.home.JoinFragment"
         tools:layout="@layout/join_fragment">
-    </fragment>>
+    </fragment>
 
     <fragment
         android:id="@+id/apply_fragment"

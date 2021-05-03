@@ -10,7 +10,15 @@ import com.ilaftalkful.ihma.view.home.ApplyFragment
 import com.ilaftalkful.ihma.viewmodel.ApplyViewModel
 import kotlinx.android.synthetic.main.single_course_layout.view.*
 
-class CourseAdapter(val viewModel: ApplyViewModel, val arrayList: ArrayList<CoursesModel>, val context: ApplyFragment): RecyclerView.Adapter<CourseAdapter.CoursesViewHolder>() {
+class CourseAdapter(val viewModel: ApplyViewModel,  val context: ApplyFragment): RecyclerView.Adapter<CourseAdapter.CoursesViewHolder>() {
+    var arrayList: ArrayList<CoursesModel>? = null
+
+    fun setData(list: ArrayList<CoursesModel>)
+    {
+        arrayList = list
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -20,16 +28,15 @@ class CourseAdapter(val viewModel: ApplyViewModel, val arrayList: ArrayList<Cour
     }
 
     override fun onBindViewHolder(holder: CourseAdapter.CoursesViewHolder, position: Int) {
-        holder.bind(arrayList.get(position))
+        arrayList?.get(position)?.let { holder.bind(it) }
     }
 
     override fun getItemCount(): Int {
-        if(arrayList.size==0){
-           // Toast.makeText(context,"List is empty",Toast.LENGTH_LONG).show()
-        }else{
-
+        return if (null != arrayList) {
+            arrayList?.size!!
+        } else{
+            0
         }
-        return arrayList.size
     }
 
 

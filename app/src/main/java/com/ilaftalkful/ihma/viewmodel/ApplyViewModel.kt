@@ -20,6 +20,8 @@ class ApplyViewModel(application: Application) : AndroidViewModel(application) {
 
     fun add(blog: CoursesModel){
         newlist.add(blog)
+        newlist.add(blog)
+        newlist.add(blog)
         lst.value=newlist
     }
 

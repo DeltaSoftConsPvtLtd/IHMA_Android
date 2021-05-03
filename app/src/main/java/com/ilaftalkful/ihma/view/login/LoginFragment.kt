@@ -35,9 +35,6 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
         loginFragmentBinding.fragment=this
         loginFragmentBinding.handler =this
         return loginFragmentBinding.root
-
-
-
     }
 
 
@@ -49,6 +46,10 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
         viewModel.getLogInResult().observe(viewLifecycleOwner, androidx.lifecycle.Observer { result->
 
             Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
+            if(result == "200")
+            {
+                findNavController().navigate(R.id.action_show_home_guest)
+            }
         })
     }
 

@@ -12,4 +12,6 @@
     <color name="colorAccent">#C5BCB9</color>
     <color name="text_color">#FAFAFA</color>
     <color name="border_white">#FAFAFA</color>
+    <color name="lightblue">#0dbbd7</color>
+
 </resources>

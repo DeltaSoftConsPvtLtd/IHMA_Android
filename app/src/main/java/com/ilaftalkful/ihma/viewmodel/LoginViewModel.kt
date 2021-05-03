@@ -36,7 +36,7 @@ class LoginViewModel : ViewModel() {
             return
         }else{
            // IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN,false)
-            logInResult.value = "Valid credentials :)"
+            logInResult.value = "200"
 
         }
 

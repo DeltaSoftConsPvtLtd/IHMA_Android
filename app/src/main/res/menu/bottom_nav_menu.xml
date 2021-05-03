@@ -13,7 +13,7 @@
     <item
         android:id="@+id/apply_fragment"
         android:icon="@drawable/ic_nav_mylogs_inactive"
-        android:title="Cources"
+        android:title="Courses"
         />
 
 </menu>
