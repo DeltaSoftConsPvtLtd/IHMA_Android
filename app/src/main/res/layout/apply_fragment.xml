@@ -5,9 +5,10 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.ApplyViewModel" />        <variable
+            type="com.ilaftalkful.ihma.viewmodel.ApplyViewModel" />
+        <variable
             name="fragment"
-            type="com.ilaftalkful.ihma.view.home.ApplyFragment" />
+            type="com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment" />
     </data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="Choose"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
                 android:textColor="@color/white" />
@@ -47,11 +48,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="90dp"
                 android:text="Your Course"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/white"
-                android:textSize="35dp"
+                android:textSize="30dp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.Toolbar

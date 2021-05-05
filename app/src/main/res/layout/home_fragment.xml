@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
         android:layout_margin="10dp"
-        tools:context=".view.home.HomeFragment">
+        tools:context=".view.bottomNavigation.HomeFragment">
         <WebView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

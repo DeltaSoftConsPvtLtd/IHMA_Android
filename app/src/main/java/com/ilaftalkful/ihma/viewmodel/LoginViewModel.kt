@@ -36,7 +36,7 @@ class LoginViewModel : ViewModel() {
             return
         }else{
            // IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN,false)
-            logInResult.value = "200"
+            logInResult.value = "Login Success"
 
         }
 

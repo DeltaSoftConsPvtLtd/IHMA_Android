@@ -46,7 +46,7 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
         viewModel.getLogInResult().observe(viewLifecycleOwner, androidx.lifecycle.Observer { result->
 
             Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
-            if(result == "200")
+            if(result == "Login Success")
             {
                 findNavController().navigate(R.id.action_show_home_guest)
             }

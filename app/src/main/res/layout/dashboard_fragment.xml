@@ -17,17 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id = "@+id/toolbar_home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
         <androidx.appcompat.widget.Toolbar
-                android:background = "@color/colorPrimaryDark"
+                 android:id = "@+id/toolbar_home"
+                android:background = "@color/colorPrimary"
                 android:layout_width = "match_parent"
                 android:layout_height = "?attr/actionBarSize"
                 app:layout_scrollFlags = "scroll|snap|enterAlways"
@@ -47,7 +39,7 @@
             </ImageView>
             </androidx.appcompat.widget.Toolbar>
 
-        </com.google.android.material.appbar.AppBarLayout>
+
 
         <fragment
             android:id="@+id/home_fragment_nav_host"
@@ -83,6 +75,8 @@
         android:layout_height="match_parent"
         android:id="@+id/navigation_view"
         android:layout_gravity="start"
+        android:background="@color/colorPrimaryDark"
+        app:itemTextColor="@color/white"
         app:menu="@menu/drawer_menu">
 
     </com.google.android.material.navigation.NavigationView>

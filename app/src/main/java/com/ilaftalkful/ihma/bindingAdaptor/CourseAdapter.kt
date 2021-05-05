@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ilaftalkful.ihma.R
 import com.ilaftalkful.ihma.model.CoursesModel
-import com.ilaftalkful.ihma.view.home.ApplyFragment
+import com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment
 import com.ilaftalkful.ihma.viewmodel.ApplyViewModel
 import kotlinx.android.synthetic.main.single_course_layout.view.*
 

@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/viewProfileFragment"
-        android:name="com.ilaftalkful.ihma.ViewProfileFragment"
+        android:name="com.ilaftalkful.ihma.view.drawer.ViewProfileFragment"
         android:label="fragment_view_profile"
         tools:layout="@layout/fragment_view_profile" />
     <fragment
         android:id="@+id/myCoursesFragment"
-        android:name="com.ilaftalkful.ihma.MyCoursesFragment"
+        android:name="com.ilaftalkful.ihma.view.drawer.MyCoursesFragment"
         android:label="fragment_my_courses"
         tools:layout="@layout/fragment_my_courses" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.ilaftalkful.ihma.SettingsFragment"
+        android:name="com.ilaftalkful.ihma.view.drawer.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

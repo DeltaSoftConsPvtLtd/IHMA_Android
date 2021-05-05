@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.ilaftalkful.ihma.view.home.HomeFragment"
+        android:name="com.ilaftalkful.ihma.view.bottomNavigation.HomeFragment"
         tools:layout="@layout/home_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/join_fragment"
-        android:name="com.ilaftalkful.ihma.view.home.JoinFragment"
+        android:name="com.ilaftalkful.ihma.view.bottomNavigation.JoinFragment"
         tools:layout="@layout/join_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/apply_fragment"
-        android:name="com.ilaftalkful.ihma.view.home.ApplyFragment"
+        android:name="com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment"
         tools:layout="@layout/apply_fragment">
     </fragment>
 </navigation>
