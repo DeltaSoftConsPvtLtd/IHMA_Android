@@ -5,7 +5,11 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.RegisterViewModel" />
+            type="com.ilaftalkful.ihma.viewmodel.SettingsViewModel" />
+
+        <variable
+            name="spinnerAdapter"
+            type="android.widget.ArrayAdapter" />
     </data>
 
     <ScrollView
@@ -220,7 +224,9 @@
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="8dp"
+                        android:entries="@array/states"
+                        android:onItemSelected="@{viewModel::onSelectItem}"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -238,7 +244,9 @@
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="8dp"
+                        android:entries="@array/district"
+                        android:onItemSelected="@{viewModel::onSelectItem}"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -256,7 +264,9 @@
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="8dp"
+                        android:entries="@array/chapter"
+                        android:onItemSelected="@{viewModel::onSelectItem}"/>
 
 
 
@@ -305,6 +315,7 @@
                     </TextView>
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:src="@drawable/camera"

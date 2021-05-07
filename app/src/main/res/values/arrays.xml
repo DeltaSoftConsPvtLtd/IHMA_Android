@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="states">
+        <item>Kerala</item>
+        <item>Tamil Nadu</item>
+        <item>Karnadaka</item>
+        <item>Andra Pradesh</item>
+        <item>Goa</item>
+
+    </string-array>
+
+    <string-array name="district">
+        <item>Idukki</item>
+        <item>Ernakulam</item>
+        <item>Thrissur</item>
+        <item>Kottayam</item>
+        <item>Palakkad</item>
+
+    </string-array>
+
+    <string-array name="chapter">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+        <item>Chapter 4 </item>
+        <item>Chapter 5</item>
+
+    </string-array>
+</resources>

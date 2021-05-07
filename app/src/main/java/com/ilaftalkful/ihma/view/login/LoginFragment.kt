@@ -5,23 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.observe
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.ilaftalkful.ihma.LogInHandler
+import com.ilaftalkful.ihma.AuthListener
 import com.ilaftalkful.ihma.R
 import com.ilaftalkful.ihma.base.IlafBaseFragment
 import com.ilaftalkful.ihma.databinding.LoginFragmentBinding
 import com.ilaftalkful.ihma.utilities.IlafSharedPreference
+import com.ilaftalkful.ihma.utilities.hide
+import com.ilaftalkful.ihma.utilities.show
 import com.ilaftalkful.ihma.view.LoginViewModel
-import java.util.*
+import kotlinx.android.synthetic.main.login_fragment.*
 
 
-class LoginFragment : IlafBaseFragment(), LogInHandler {
+class LoginFragment : IlafBaseFragment() {
 
     val viewModel: LoginViewModel by viewModels()
 
@@ -33,7 +33,7 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
         loginFragmentBinding.lifecycleOwner=this
         loginFragmentBinding.viewModel=viewModel
         loginFragmentBinding.fragment=this
-        loginFragmentBinding.handler =this
+//        loginFragmentBinding.handler =this
         return loginFragmentBinding.root
     }
 
@@ -63,6 +63,21 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
     fun onResetPasswordClicked(view:View){
         findNavController().navigate(R.id.action_login_fragment_to_resetPasswordFragment)
     }
+
+//    override fun onStarted() {
+//        progress_bar.show()
+//    }
+//
+//    override fun onSuccess(loginResponse: LiveData<String>) {
+//        loginResponse.observe(this, Observer {
+//            progress_bar.hide()
+//            Toast.makeText(context, it, Toast.LENGTH_SHORT).show() })
+//    }
+//
+//    override fun onFailure(message: String) {
+//        progress_bar.hide()
+//        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+//    }
 //
 //    fun onLoginClicked(view:View){
 //        IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN,false)
@@ -71,9 +86,9 @@ class LoginFragment : IlafBaseFragment(), LogInHandler {
 
 
 
-    override fun onLogInClicked() {
-        viewModel.performValidation()
-    }
+//    override fun onLogInClicked() {
+//        viewModel.performValidation()
+//    }
 
 
 }

@@ -1,14 +1,14 @@
 package com.ilaftalkful.ihma.utilities
 
+import android.view.View
 import android.webkit.WebView
+import android.widget.ProgressBar
 import androidx.databinding.BindingAdapter
 
-class Utility {
-    companion object{
-//        @BindingAdapter("loadUrl")
-//        @JvmStatic
-//        fun WebView.setUrl(url: String) {
-//            this.loadUrl(url)
-//        }
-    }
+fun ProgressBar.show(){
+    visibility = View.VISIBLE
+}
+
+fun ProgressBar.hide(){
+    visibility = View.GONE
 }

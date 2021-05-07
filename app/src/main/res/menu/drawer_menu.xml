@@ -13,7 +13,7 @@
         android:title="My Courses"
         />
     <item
-        android:id="@+id/settingsFragment"
+        android:id="@+id/settingsFragment_id"
         android:icon="@drawable/ic_nav_mylogs_inactive"
         android:title="Settings"
         />

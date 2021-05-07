@@ -81,12 +81,13 @@ class DashBoardFragment : IlafBaseFragment() {
             }
         }
         NavigationUI.setupWithNavController(dashboardBinding.bottomNavigation, navController)
+        NavigationUI.setupWithNavController(dashboardBinding.navigationView, navController)
 
 
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-       // NavigationUI.setupActionBarWithNavController(this,navController,drawer_layout) //the most important part
-
-        navigation_view.setupWithNavController(navController!!) // //the second most important part
+//        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+//       // NavigationUI.setupActionBarWithNavController(this,navController,drawer_layout) //the most important part
+//
+//        navigation_view.setupWithNavController(navController!!) // //the second most important part
 
 
 

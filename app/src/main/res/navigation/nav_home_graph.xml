@@ -22,4 +22,22 @@
         android:name="com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment"
         tools:layout="@layout/apply_fragment">
     </fragment>
+
+    <fragment
+        android:id="@+id/myCoursesFragment"
+        android:name="com.ilaftalkful.ihma.view.drawer.MyCoursesFragment"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_my_courses" />
+    <fragment
+        android:id="@+id/viewProfileFragment"
+        android:name="com.ilaftalkful.ihma.view.drawer.ViewProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_view_profile" />
+    <fragment
+        android:id="@+id/settingsFragment_id"
+        android:name="com.ilaftalkful.ihma.view.home.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+
+
 </navigation>
