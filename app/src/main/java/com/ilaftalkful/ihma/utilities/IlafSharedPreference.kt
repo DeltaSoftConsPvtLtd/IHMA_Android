@@ -203,6 +203,8 @@ class IlafSharedPreference {
     interface Constants {
         companion object {
             val IS_GUEST_LOGIN="guest_login"
+            val LANGUAGE_KEY="language"
+            val TOKEN_KEY="token"
         }
     }
 }

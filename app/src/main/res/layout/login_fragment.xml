@@ -8,8 +8,8 @@
             name="fragment"
             type="com.ilaftalkful.ihma.view.login.LoginFragment" />
         <variable
-            name="handler"
-            type="com.ilaftalkful.ihma.AuthListener" />
+            name="errors"
+            type="com.ilaftalkful.ihma.model.SignInErrors" />
     </data>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,12 +46,14 @@
             android:layout_height="wrap_content"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/textInputLayout_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:errorText="@{errors.userNameError}"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/username_et"
                 style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,13 +64,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
+            android:id="@+id/textInputLayout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
->
+            app:errorText="@{errors.userPasswordError}">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_et"
                 style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_gravity="center_vertical"
@@ -102,7 +105,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:onClick="@{() -> viewModel.performValidation()}"
+                android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
+                android:enabled="@{viewModel.isValid}"
+                android:onClick="@{(v)->fragment.onLoginClicked(v,errors)}"
                 android:padding="15dp"
                 android:text="@string/login"
                 android:textAllCaps="true"
@@ -115,7 +120,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:onClick="@{(v)->fragment.onResetPasswordClicked(v)}"
             android:gravity="center"
             android:text="@string/forget_password"
             android:textColor="@color/white"

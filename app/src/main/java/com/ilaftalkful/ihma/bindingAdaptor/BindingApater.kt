@@ -1,4 +1,4 @@
-package com.ilaftalkful.mobileonthego.bindingAdaptor
+package com.ilaftalkful.ihma.bindingAdaptor
 
 import android.view.KeyEvent
 import android.view.View
@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView
 import androidx.appcompat.widget.AppCompatSpinner
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableField
+import com.google.android.material.textfield.TextInputLayout
 
 @BindingAdapter("setWebViewClient")
 fun setWebViewClient(view: WebView, client: WebViewClient?) {
@@ -46,5 +47,13 @@ fun loadUrl(view: WebView, url: String?) {
 @BindingAdapter("android:adapter")
 fun setAutoCompleteAdapter(textView: AutoCompleteTextView, adapter: ArrayAdapter<*>) {
     textView.setAdapter(adapter)
+
 }
 
+@BindingAdapter("app:errorText")
+fun setErrorText(view: TextInputLayout, errorMessage: String) {
+    if (errorMessage.isEmpty())
+        view.error = null
+    else
+        view.error = errorMessage;
+}

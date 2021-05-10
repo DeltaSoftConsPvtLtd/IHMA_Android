@@ -1,67 +1,101 @@
 package com.ilaftalkful.ihma.view
 
-import android.view.View
-import androidx.lifecycle.LiveData
+import android.app.Application
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ilaftalkful.ihma.AuthListener
-import com.ilaftalkful.ihma.onlineDatabase.Repository
-
-class LoginViewModel : ViewModel() {
-
-    var username: String = ""
-    var password: String = ""
-
-//    /**
-//     * To pass login result to activity
-//     */
-    private val logInResult = MutableLiveData<String>()
-
-    fun getLogInResult(): LiveData<String> = logInResult
+import com.ilaftalkful.ihma.model.ErrorData
+import com.ilaftalkful.ihma.model.SignInErrors
+import com.ilaftalkful.ihma.model.UserDetails
+import com.ilaftalkful.ihma.model.UserLiveUpdate
+import com.ilaftalkful.ihma.retrofit.UserService
+import com.ilaftalkful.ihma.utilities.IhmaValidator
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
-    var authListener: AuthListener? = null
+class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
-    /**
-     * Called from activity on login button click
-     */
-    fun performValidation() {
 
-        if (username.isBlank()) {
-            logInResult.value = "Invalid username"
-            return
+    val username = MutableLiveData<String>()
+    val password = MutableLiveData<String>()
+    internal var userLiveData: UserLiveUpdate? = null
+    lateinit var error: SignInErrors
+    val isUsernameEmpty = MutableLiveData<Boolean>(false)
+
+
+    init {
+        userLiveData = UserLiveUpdate()
+        error = SignInErrors(null)
+
+        if (username.value?.isNullOrEmpty() ?: false) {
+            isUsernameEmpty.postValue(true)
         }
-        else if(password.isBlank()){
-            logInResult.value = "Invalid password"
-            return
-        }else{
-           // IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN,false)
-
-            //val loginResponse = Repository().userLogin(username,password)
-            // logInResult.value = loginResponse.toString()
-
-            logInResult.value = "Login Success"
-
-
-
-        }
-
-
-
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun callLogin(error: SignInErrors) {
+        userLiveData?.buttonClicked()
+        var userDetails = UserDetails()
+        userDetails.email = username.value?.trim()
+        userDetails.password = password.value?.trim()
 
-    fun onLogInClicked(view: View){
-        authListener?.onStarted()
-        if(username.isBlank()|| password.isBlank()){
-            authListener?.onFailure("Invalid email or password")
-            return
+        if (IhmaValidator.isNullOrEmpty(error.userNameError)
+            && IhmaValidator.isNullOrEmpty(error.userPasswordError)
+        ) {
+            error.uiUpdate = true
+            tryLogin(userDetails, error)
         }
-
-        val loginResponse = Repository().userLogin(username,password)
-        authListener?.onSuccess(loginResponse)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun tryLogin(userDetails: UserDetails, errorData: SignInErrors) {
+        userLiveData?.processing()
+        var loginService = UserService.create(getApplication<Application>(), false)
+        val subscribe =
+            loginService?.doSignIn(userDetails.email!!, userDetails.password!!)?.observeOn(
+                AndroidSchedulers.mainThread()
+            )
+                ?.subscribeOn(
+                    Schedulers.io()
+                )
+                ?.subscribe({
+                    if (it.isSuccessful()) {
+                        if (it.code() == 200) {
+                            errorData.uiUpdate = true
+                            userLiveData?.userLoginSuccess()
+                        } else {
+                            errorData.uiUpdate = false
+                            userLiveData?.userLoginFailed()
+                        }
+                    } else {
+                        if (it.code() == 400) {
+                            userLiveData?.userLoginFailed()
+                        }
+                        errorData.uiUpdate = false
+                    } // this will tell you why your api doesnt work most of time
+
+                }, { error ->
+                    errorData.uiUpdate = false
+                    userLiveData?.userLoginFailed()
+                    userLiveData?.postError(ErrorData(100, null))
+                    error.printStackTrace()
+
+                })
+    }
+
+    var isValid: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
+        addSource(username) {
+            value = it.isNotEmpty() && password.value?.isNotEmpty() ?: false
+        }
+        addSource(password) {
+            value = it.isNotEmpty() && username.value?.isNotEmpty() ?: false
+        }
+
+    }
 }
 
