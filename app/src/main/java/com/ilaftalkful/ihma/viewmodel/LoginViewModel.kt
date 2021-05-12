@@ -14,6 +14,7 @@ import com.ilaftalkful.ihma.model.UserLiveUpdate
 import com.ilaftalkful.ihma.retrofit.UserService
 import com.ilaftalkful.ihma.utilities.IhmaValidator
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 
@@ -23,15 +24,16 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val username = MutableLiveData<String>()
     val password = MutableLiveData<String>()
     internal var userLiveData: UserLiveUpdate? = null
-    lateinit var error: SignInErrors
+    var error: SignInErrors
     val isUsernameEmpty = MutableLiveData<Boolean>(false)
+
 
 
     init {
         userLiveData = UserLiveUpdate()
-        error = SignInErrors(null)
+        error = SignInErrors("")
 
-        if (username.value?.isNullOrEmpty() ?: false) {
+        if (username.value?.isEmpty() ?: false) {
             isUsernameEmpty.postValue(true)
         }
 
@@ -58,10 +60,10 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private fun tryLogin(userDetails: UserDetails,errorData: SignInErrors) {
         userLiveData?.processing()
         val loginService = UserService.create(getApplication<Application>(), false)
-        val subscribe =
-            loginService?.doSignIn(userDetails.username!!, userDetails.password!!)?.observeOn(
-                AndroidSchedulers.mainThread()
-            )
+        val subscribe=
+            loginService?.doSignIn(userDetails.username!!, userDetails.password!!)
+                ?.observeOn(
+                AndroidSchedulers.mainThread())
                 ?.subscribeOn(
                     Schedulers.io()
                 )

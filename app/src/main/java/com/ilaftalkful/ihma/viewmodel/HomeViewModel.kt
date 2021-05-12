@@ -13,11 +13,11 @@ import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 class HomeViewModel(application: Application) : AndroidViewModel(application){
     val webViewUrl  = "https://www.google.com"
     var isGusetLogin: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
-    lateinit var ilafPreference: IlafSharedPreference
+    var ilafPreference: IlafSharedPreference? = null
 
     init {
         ilafPreference = IlafSharedPreference(application)
-        isGusetLogin.postValue(ilafPreference.getBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN))
+        isGusetLogin.postValue(ilafPreference?.getBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN))
     }
 
 

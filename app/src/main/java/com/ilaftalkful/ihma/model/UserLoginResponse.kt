@@ -1,25 +1,65 @@
 package com.ilaftalkful.ihma.model
 
-data class UserLoginResponse(
-    val `data`: List<Data>,
-    val status: Status
-)
+import com.google.gson.annotations.SerializedName
 
-data class Data(
-    val expires_at: String,
-    val return_to_url: Any,
-    val session_token: String,
-    val status: String,
-    val user: User
-)
+open class UserLoginResponse  {
+    @SerializedName("type")
+    var type: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
 
-data class Status(
-    val code: Int,
-    val error: Boolean,
-    val message: String,
-    val type: String
-)
+    @SerializedName("message")
+    var message: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+    @SerializedName("code")
+    var code: Int? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+    @SerializedName("error")
+    var error: Boolean? = null
+        get() = field
+        set(value) {
+            field = value
+        }
 
-data class User(
-    val username: String
-)
+    @SerializedName("status")
+    var status: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+    @SerializedName("return_to_url")
+    var return_to_url: Any? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+    @SerializedName("username")
+    var username: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    @SerializedName("expires_at")
+    var expires_at: String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+    @SerializedName("session_token")
+    var session_token: Long? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
+}
