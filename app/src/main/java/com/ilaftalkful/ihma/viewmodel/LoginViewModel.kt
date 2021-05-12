@@ -40,9 +40,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     @RequiresApi(Build.VERSION_CODES.M)
     fun callLogin(error: SignInErrors) {
         userLiveData?.buttonClicked()
-        var userDetails = UserDetails()
-        userDetails.email = username.value?.trim()
+        val userDetails = UserDetails()
+        userDetails.username = username.value?.trim()
         userDetails.password = password.value?.trim()
+
+
 
         if (IhmaValidator.isNullOrEmpty(error.userNameError)
             && IhmaValidator.isNullOrEmpty(error.userPasswordError)
@@ -53,11 +55,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun tryLogin(userDetails: UserDetails, errorData: SignInErrors) {
+    private fun tryLogin(userDetails: UserDetails,errorData: SignInErrors) {
         userLiveData?.processing()
-        var loginService = UserService.create(getApplication<Application>(), false)
+        val loginService = UserService.create(getApplication<Application>(), false)
         val subscribe =
-            loginService?.doSignIn(userDetails.email!!, userDetails.password!!)?.observeOn(
+            loginService?.doSignIn(userDetails.username!!, userDetails.password!!)?.observeOn(
                 AndroidSchedulers.mainThread()
             )
                 ?.subscribeOn(

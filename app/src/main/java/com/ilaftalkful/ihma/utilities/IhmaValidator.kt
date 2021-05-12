@@ -3,11 +3,13 @@ package com.ilaftalkful.ihma.utilities
 import android.content.Context
 import android.util.Patterns
 import com.ilaftalkful.ihma.R
+
 import java.util.regex.Pattern
 
 class IhmaValidator(context: Context) {
 
     companion object {
+
 
 
         fun validateUserPasswordLength(password: String?): Boolean {
@@ -16,28 +18,28 @@ class IhmaValidator(context: Context) {
             return isValidLength(password, minLength)
         }
 
-        fun isValidUserPassword(password: String?, context: Context?): String? {
+        fun isValidUserPassword(password: String?,context:Context?): String? {
             var errorMSg: String? = null
             if (isNullOrEmpty(password)) {
                 errorMSg = context?.getString(R.string.password_no_empty)
                 return errorMSg
             }
-            if (hasSpace(password)) {
-                errorMSg = context?.getString(R.string.space_pasword)
-                return errorMSg
-            }
-            if (!hasNumericValues(password)) {
-                errorMSg = context?.getString(R.string.one_numeric)
-                return errorMSg
-            }
-            if (!containsAtleastOneAlphabet(password)) {
-                errorMSg = context?.getString(R.string.at_least_one_alphabet)
-                return errorMSg
-            }
-            if (!isValidLength(password, 6)) {
-                errorMSg = context?.getString(R.string.password_length)
-                return errorMSg
-            }
+//            if (hasSpace(password)) {
+//                errorMSg = context?.getString(R.string.space_pasword)
+//                return errorMSg
+//            }
+//            if (!hasNumericValues(password)) {
+//                errorMSg = context?.getString(R.string.one_numeric)
+//                return errorMSg
+//            }
+//            if (!containsAtleastOneAlphabet(password)) {
+//                errorMSg = context?.getString(R.string.at_least_one_alphabet)
+//                return errorMSg
+//            }
+//            if (!isValidLength(password, 6)) {
+//                errorMSg = context?.getString(R.string.password_length)
+//                return errorMSg
+//            }
             return errorMSg
         }
 
@@ -73,7 +75,7 @@ class IhmaValidator(context: Context) {
             return true
         }
 
-        fun isValidEmails(email: String, context: Context?): String? {
+        fun isValidEmails(email: String,context:Context?): String? {
             var errorMSg: String? = null
             if (isNullOrEmpty(email)) {
                 errorMSg = context?.getString(R.string.email_empty)
@@ -86,28 +88,28 @@ class IhmaValidator(context: Context) {
             return errorMSg
         }
 
-        fun isValidUserName(email: String, context: Context?): String? {
+        fun isValidUserName(email: String,context:Context?): String? {
             var errorMSg: String? = null
             if (isNullOrEmpty(email)) {
                 errorMSg = context?.getString(R.string.email_empty)
                 return errorMSg
             }
-            if (!isValidEmail(email)) {
-                errorMSg = context?.getString(R.string.invalid_email)
-                return errorMSg
-            }
-            val separated =
-                email.split("\\.".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-
-            if (separated == null || separated.size < 2 || separated[separated.size - 1].length < 2) {
-                errorMSg = context?.getString(R.string.invalid_email)
-                return errorMSg
-            }
-
-            if (Character.isWhitespace(email[0]) || Character.isWhitespace(email[email.length - 1])) {
-                errorMSg = context?.getString(R.string.invalid_email)
-                return errorMSg
-            }
+//            if (!isValidEmail(email)) {
+//                errorMSg = context?.getString(R.string.invalid_email)
+//                return errorMSg
+//            }
+//            val separated =
+//                email.split("\\.".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+//
+//            if (separated == null || separated.size < 2 || separated[separated.size - 1].length < 2) {
+//                errorMSg =context?.getString(R.string.invalid_email)
+//                return errorMSg
+//            }
+//
+//            if (Character.isWhitespace(email[0]) || Character.isWhitespace(email[email.length - 1])) {
+//                errorMSg =context?.getString(R.string.invalid_email)
+//                return errorMSg
+//            }
 
             return errorMSg
         }
@@ -131,10 +133,28 @@ class IhmaValidator(context: Context) {
             val b = m.find()
             return b
         }
-
-
     }
-}
 
+}data class LoginResponseDatas(
+    val `data`: List<Data>,
+    val status: Status
+)
 
+data class Data(
+    val expires_at: String,
+    val return_to_url: Any,
+    val session_token: String,
+    val status: String,
+    val user: User
+)
 
+data class Status(
+    val code: Int,
+    val error: Boolean,
+    val message: String,
+    val type: String
+)
+
+data class User(
+    val username: String
+)

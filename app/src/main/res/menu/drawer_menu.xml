@@ -17,6 +17,12 @@
         android:icon="@drawable/ic_nav_mylogs_inactive"
         android:title="Settings"
         />
+
+    <item
+        android:id="@+id/OTPFragment"
+        android:icon="@drawable/ic_nav_mylogs_inactive"
+        android:title="OTP"
+        />
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_nav_mylogs_inactive"

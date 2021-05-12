@@ -112,7 +112,7 @@ class LoginFragment : IlafBaseFragment() {
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    fun onLoginClicked(view: View, errors: SignInErrors) {
+    fun onLoginClicked(view: View,errors: SignInErrors) {
         if (Utility.checkInternetConnection(requireActivity())) {
             (activity as IlafBaseActivity).hideKeyboard()
             errors.userNameError = IhmaValidator.isValidUserName(viewModel.username.value!!.trim(),requireActivity())

@@ -47,13 +47,17 @@ fun loadUrl(view: WebView, url: String?) {
 @BindingAdapter("android:adapter")
 fun setAutoCompleteAdapter(textView: AutoCompleteTextView, adapter: ArrayAdapter<*>) {
     textView.setAdapter(adapter)
-
 }
 
-@BindingAdapter("app:errorText")
-fun setErrorText(view: TextInputLayout, errorMessage: String) {
-    if (errorMessage.isEmpty())
-        view.error = null
-    else
-        view.error = errorMessage;
-}
+    @BindingAdapter("app:errorText")
+    fun setErrorText(view: TextInputLayout, errorMessage: String?) {
+        if (errorMessage != null) {
+            if (errorMessage.isEmpty()) {
+                view.error = null
+            } else
+                view.error = errorMessage
+        };
+    }
+
+
+

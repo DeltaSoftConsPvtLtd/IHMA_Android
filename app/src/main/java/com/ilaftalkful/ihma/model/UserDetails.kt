@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 open class UserDetails {
     @SerializedName("username")
-    var email : String? = null
+    var username: String? = null
         get() = field
         set(value) {
             field = value

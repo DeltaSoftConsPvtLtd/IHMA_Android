@@ -818,6 +818,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="OTPFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-405" />
+                            <option name="y" value="-35" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="apply_fragment">
                     <value>
                       <LayoutPositions>
@@ -871,8 +883,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="262" />
+                            <option name="y" value="369" />
                           </Point>
                         </option>
                       </LayoutPositions>
