@@ -66,6 +66,7 @@
     <string name="password_length">Password should at least 6 letter long</string>
     <string name="password_no_empty">Password no should not be Empty </string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="login_failed">Login Failed</string>
     <string name="ok">OK</string>
     <string name="no_interbnet">You are Offline, Try again later !!</string>
 </resources>

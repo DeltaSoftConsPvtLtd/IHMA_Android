@@ -21,7 +21,7 @@ class  RetrofitClient {
         private var instance: Retrofit? = null
         private var mContext: Context? = null
         private var mUrl: String? = null
-        lateinit var pref:IlafSharedPreference
+        var pref:IlafSharedPreference? = null
         private var converterFactory: Converter.Factory? = null
         val API_BASE_URL_PROD = "http://lmsihma.co.in/api/"
        // val API_BASE_URL_DEV = "http://ilaftdtest.ap-south-1.elasticbeanstalk.com/"
@@ -42,10 +42,10 @@ class  RetrofitClient {
             val builder = OkHttpClient().newBuilder()
             builder.readTimeout(60, TimeUnit.SECONDS)
             builder.connectTimeout(60, TimeUnit.SECONDS)
-            builder.addInterceptor(LanguageInterceptor())
-            if(isAuth?:false) {
-                builder.addInterceptor(AuthInterceptor())
-            }
+//            builder.addInterceptor(LanguageInterceptor())
+//            if(isAuth?:false) {
+//                builder.addInterceptor(AuthInterceptor())
+//            }
             val interceptor = HttpLoggingInterceptor()
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             val client: OkHttpClient = builder.addInterceptor(interceptor).build()
@@ -71,8 +71,8 @@ class  RetrofitClient {
                 if (pref != null) { //essentially checking if the prefs has a non null token
                     request = request.newBuilder()
                         .addHeader(
-                            "Language",
-                            RetrofitClient.pref.getStringPrefValue(IlafSharedPreference.Constants.LANGUAGE_KEY)
+                            "",
+                            ""
                                 ?: ""
                         )
                         .build()
@@ -87,7 +87,7 @@ class  RetrofitClient {
                 var request: Request = chain.request()
                 if (pref!= null ) { //essentially checking if the prefs has a non null token
                     request = request.newBuilder()
-                            .addHeader(Constants.AUTHORIZATION_KEY, Constants.BEARER_KEY +pref.getStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY) ?: "")
+                            .addHeader(Constants.AUTHORIZATION_KEY, Constants.BEARER_KEY +pref?.getStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY) ?: "")
                         .build()
                 }
                 return chain.proceed(request)

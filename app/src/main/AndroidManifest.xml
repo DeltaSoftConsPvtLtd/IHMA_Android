@@ -7,14 +7,15 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ileaf">
+        android:theme="@style/Theme.ihma">
         <activity
             android:name="com.ilaftalkful.ihma.view.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Ileaf.NoActionBar">
+            android:theme="@style/Theme.ihma.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

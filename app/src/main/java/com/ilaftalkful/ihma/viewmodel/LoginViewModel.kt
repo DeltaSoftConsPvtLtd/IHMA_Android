@@ -1,5 +1,6 @@
 package com.ilaftalkful.ihma.view
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -56,6 +57,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    @SuppressLint("CheckResult")
     @RequiresApi(Build.VERSION_CODES.M)
     private fun tryLogin(userDetails: UserDetails,errorData: SignInErrors) {
         userLiveData?.processing()
@@ -68,7 +70,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                     Schedulers.io()
                 )
                 ?.subscribe({
-                    if (it.isSuccessful()) {
+                    if (it.isSuccessful) {
                         if (it.code() == 200) {
                             errorData.uiUpdate = true
                             userLiveData?.userLoginSuccess()

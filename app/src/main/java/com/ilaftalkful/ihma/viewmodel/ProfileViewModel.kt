@@ -7,7 +7,7 @@ import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 
 class ProfileViewModel (application: Application) : AndroidViewModel(application) {
     var isGusetLogin: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
-    lateinit var ilafPreference: IlafSharedPreference
+    var ilafPreference: IlafSharedPreference
 
     init {
         ilafPreference = IlafSharedPreference(application)

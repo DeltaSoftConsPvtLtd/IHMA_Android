@@ -13,5 +13,5 @@
     <color name="text_color">#FAFAFA</color>
     <color name="border_white">#FAFAFA</color>
     <color name="lightblue">#0dbbd7</color>
-
+    <color name="error_color">#BDAE00</color>
 </resources>

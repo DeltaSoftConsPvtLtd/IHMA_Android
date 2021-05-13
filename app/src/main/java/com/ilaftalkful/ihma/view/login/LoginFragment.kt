@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
@@ -21,6 +22,7 @@ import com.ilaftalkful.ihma.utilities.*
 import com.ilaftalkful.ihma.view.LoginViewModel
 import com.ilaftalkful.ihma.view.SplashActivity
 import kotlinx.android.synthetic.main.login_fragment.*
+import org.checkerframework.checker.units.qual.Length
 
 
 class LoginFragment : IlafBaseFragment() {
@@ -41,7 +43,7 @@ class LoginFragment : IlafBaseFragment() {
         loginFragmentBinding?.lifecycleOwner = this
         loginFragmentBinding?.viewModel = viewModel
         loginFragmentBinding?.fragment = this
-        loginFragmentBinding?.errors = SignInErrors(null)
+        loginFragmentBinding?.errors = SignInErrors("")
         return loginFragmentBinding?.root
     }
 
@@ -58,6 +60,9 @@ class LoginFragment : IlafBaseFragment() {
                 loginFragmentBinding?.passwordEt?.requestFocus()
             }
         })
+
+
+
         viewModel.userLiveData?.observe(viewLifecycleOwner, Observer {
             when (it.getStatus()) {
                 UserData.UserStatus.CLICKED -> {
@@ -65,6 +70,23 @@ class LoginFragment : IlafBaseFragment() {
                 }
                 UserData.UserStatus.LOGIN_SUCCESS -> {
                     findNavController().navigate(R.id.action_show_home_guest)
+
+                }
+                UserData.UserStatus.USER_LOGIN_FAILED -> {
+                    IlafCommonAlert(
+                        requireActivity(),
+                        it.statusMessage ?: getString(R.string.login_failed),
+                        getString(R.string.ok),
+                        null,
+                        object : IlafCommonAlert.IlafDialogListener {
+                            override fun onDialogPositiveClick() {
+                            }
+
+                            override fun onDialogNegativeClick() {
+
+                            }
+
+                        }).show()
 
                 }
                 UserData.UserStatus.OPERATION_STARTED -> {
@@ -117,7 +139,6 @@ class LoginFragment : IlafBaseFragment() {
             (activity as IlafBaseActivity).hideKeyboard()
             errors.userNameError = IhmaValidator.isValidUserName(viewModel.username.value!!.trim(),requireActivity())
             errors.userPasswordError = IhmaValidator.isValidUserPassword(viewModel.password.value!!.trim(),requireActivity())
-
             viewModel.callLogin(errors)
         } else {
             IlafCommonAlert(

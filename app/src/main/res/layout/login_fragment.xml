@@ -33,6 +33,7 @@
         <ImageView
             android:layout_width="120dp"
             android:src="@drawable/logo"
+            android:layout_margin="10dp"
             android:layout_height="120dp"/>
         <TextView
             android:layout_width="match_parent"
@@ -50,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorTextColor="@color/white"
+            android:layout_margin="10dp"
             app:errorIconTint="@color/white"
             app:errorText="@{errors.userNameError}"
             android:hint="@string/username"
@@ -73,6 +75,7 @@
             app:errorTextColor="@color/white"
             app:errorIconTint="@color/white"
             android:hint="@string/password"
+            android:layout_margin="10dp"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -99,7 +102,7 @@
             android:layout_width="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="55dp"
-
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="horizontal"
 
@@ -109,11 +112,11 @@
                 android:theme="@style/AccentButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:textSize="15dp"
                 android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
                 android:enabled="@{viewModel.isValid}"
                 android:onClick="@{(v)->fragment.onLoginClicked(v,errors)}"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:text="@string/login"
                 android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
 
-    <style name="Theme.Ileaf" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.ihma" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
             <!-- Customize your theme here. -->
             <item name="colorPrimary">@color/colorPrimary</item>
@@ -64,19 +64,25 @@
         <item name="android:layout_marginTop">@dimen/margin_item</item>
         <item name="android:fontFamily">@font/dmsans_medium</item>
         <item name="android:gravity">bottom</item>
-        <item name="android:colorControlActivated">@color/white</item>
+
+        <item name="android:colorControlActivated">@color/dark_red</item>
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColorHint">@color/text_color</item>
+        <item name="android:textColorHint">@color/dark_red</item>
+
+
+        <item name="colorControlNormal">#c5c5c5</item>
+        <item name="colorControlHighlight">@color/red</item>
     </style>
     <style name="editText_no_margin" >
     <!-- Customize your theme here. -->
     <item name="android:textSize">15dp</item>
     <item name="android:textColor">@color/text_color</item>
-        <item name="android:background">@color/colorPrimary</item>  <item name="android:fontFamily">@font/dmsans_medium</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/dmsans_medium</item>
     <item name="android:drawablePadding">10dp</item>
     <item name="android:textColorHint">@color/text_color</item>
 </style>
-    <style name="Theme.Ileaf.NoActionBar">
+    <style name="Theme.ihma.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -97,4 +103,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+
+    <style name="Theme.App.Base" parent="Theme.ihma">
+        <item name="android:textColorHint">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/dmsans_medium</item>
+        <item name="singleLine">true</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="errorTextColor">@color/error_color</item>
+        <item name="errorIconTint">@color/error_color</item>
+
+    </style>
+
 </resources>
