@@ -43,6 +43,11 @@
         android:name="com.ilaftalkful.ihma.view.drawer.OTPFragment"
         android:label="fragment_o_t_p"
         tools:layout="@layout/fragment_o_t_p" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.ilaftalkful.ihma.view.register.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/register_fragment" />
 
 
 </navigation>

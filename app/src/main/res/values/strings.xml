@@ -69,4 +69,7 @@
     <string name="login_failed">Login Failed</string>
     <string name="ok">OK</string>
     <string name="no_interbnet">You are Offline, Try again later !!</string>
+    <string name="name_empty">Name Cannot be empty</string>
+    <string name="naem_alphabet_only">Name should contain alphabets only</string>
+    <string name="invalid_phone">Invaild phone number</string>
 </resources>

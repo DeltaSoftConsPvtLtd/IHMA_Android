@@ -2,6 +2,7 @@ package com.ilaftalkful.ihma.retrofit
 
 import android.app.Application
 import com.ilaftalkful.ihma.model.loginmodel.UserLoginResponse
+import com.ilaftalkful.ihma.model.registerModel.RegisterUserDetails
 import io.reactivex.Observable
 import retrofit2.Response
 import retrofit2.http.*
@@ -12,13 +13,13 @@ interface UserService {
     @POST("login/")
     fun doSignIn(
         @Field("username") userName: String,
-        @Field("password") password: String,
+        @Field("password") password: String
         ): Observable<Response<UserLoginResponse>>
 
-//    @POST("login")
-//    fun doSignIn(
-//        @Body details: UserDetails
-//        ): Observable<Response<UserLoginResponse>>
+
+    //Register
+    @GET("getRegisterDetail/")
+    fun doRegisterIn(@Body details: RegisterUserDetails): Observable<Response<UserLoginResponse>>
 
     companion object Factory {
         fun create(application: Application, isAuth: Boolean): UserService? {

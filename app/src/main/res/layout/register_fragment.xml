@@ -6,7 +6,17 @@
         <variable
             name="viewModel"
             type="com.ilaftalkful.ihma.viewmodel.RegisterViewModel" />
+
+        <variable
+            name="fragment"
+            type="com.ilaftalkful.ihma.view.register.RegistrationFragment" />
+
+        <variable
+            name="errors"
+            type="com.ilaftalkful.ihma.model.UserRegistrationErrors" />
+
     </data>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -33,6 +43,9 @@
                         android:id="@+id/first_name_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.firstnameError}"
                         android:layout_marginTop="50dp">
 
                         <EditText
@@ -41,6 +54,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.firstName}"
                             android:hint="First Name"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -49,6 +63,9 @@
                         android:id="@+id/last_name_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.lastnameError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -57,6 +74,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.lastName}"
                             android:hint="Last Name"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +83,9 @@
                         android:id="@+id/register_no_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.registrationNoError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -73,6 +94,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.registrationNo}"
                             android:hint="Registration Number"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -81,6 +103,9 @@
                         android:id="@+id/mobile_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.phoneNumberError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -89,6 +114,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.mobile}"
                             android:hint="Mobile"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -163,6 +189,9 @@
                         android:id="@+id/email_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.userEmailError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -171,6 +200,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.email}"
                             android:hint="Email"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,6 +208,9 @@
                         android:id="@+id/address_home_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.addressHomeError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -186,6 +219,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.addressHome}"
                             android:hint="Address Home"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -193,6 +227,9 @@
                         android:id="@+id/address_clinic_tl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:errorTextColor="@color/colorPrimary"
+                        app:errorIconTint="@color/colorPrimary"
+                        app:errorText="@{errors.addressClinicError}"
                         android:layout_marginTop="20dp">
 
                         <EditText
@@ -201,6 +238,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:background="@color/white"
+                            android:text="@={viewModel.addressClinic}"
                             android:hint="Address Clinic"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -219,6 +257,7 @@
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
+                        android:entries="@array/states"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp" />
 
@@ -237,6 +276,7 @@
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
+                        android:entries="@array/district"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp" />
 
@@ -254,11 +294,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:entries="@array/chapter"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp" />
-
-
 
                     <TextView
                         android:id="@+id/submit_id"
@@ -273,6 +312,9 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="30dp"
+                        android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
+                        android:enabled="@{viewModel.isValid}"
+                        android:onClick="@{(v)->fragment.onRegisterClicked(v,errors)}"
                         android:textAllCaps="false" />
 
 
@@ -305,6 +347,7 @@
                     </TextView>
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:src="@drawable/camera"

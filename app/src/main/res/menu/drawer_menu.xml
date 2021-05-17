@@ -23,6 +23,12 @@
         android:icon="@drawable/ic_nav_mylogs_inactive"
         android:title="OTP"
         />
+
+    <item
+        android:id="@+id/registrationFragment"
+        android:icon="@drawable/ic_nav_mylogs_inactive"
+        android:title="Register"
+        />
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_nav_mylogs_inactive"

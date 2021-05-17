@@ -30,4 +30,16 @@ class UserLiveUpdate : MutableLiveData<UserData>() {
         postValue(mData.userLoginFailed())
     }
 
+    fun userRegistrationSuccess() {
+        postValue(mData.registrationSuccess())
+    }
+
+    fun sessionExpired() {
+        postValue(mData.sessionExpired())
+    }
+
+    fun userRegisterFailed() {
+        postValue(mData.registrationFailed())
+    }
+
 }

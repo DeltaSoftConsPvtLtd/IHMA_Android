@@ -53,15 +53,6 @@ class LoginFragment : IlafBaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.isUsernameEmpty.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                loginFragmentBinding?.usernameEt?.requestFocus()
-            } else {
-                loginFragmentBinding?.passwordEt?.requestFocus()
-            }
-        })
-
-
 
         viewModel.userLiveData?.observe(viewLifecycleOwner, Observer {
             when (it.getStatus()) {

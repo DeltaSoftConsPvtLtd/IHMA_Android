@@ -27,12 +27,6 @@ class SettingsFragment : Fragment() {
 
     val viewModel: SettingsViewModel by viewModels()
 
-    lateinit var profile_image: ImageView
-    private val pickImage = 100
-    private var imageUri: Uri? = null
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,25 +34,8 @@ class SettingsFragment : Fragment() {
 
         val contactFragmentBinding = DataBindingUtil.inflate<FragmentSettingsBinding>(inflater,R.layout.fragment_settings, container, false)
         contactFragmentBinding.lifecycleOwner=this
-
-        //Image Uploading
-        profile_image = contactFragmentBinding.profileImage
-        profile_image.setOnClickListener {
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            startActivityForResult(gallery, pickImage)
-
-
-
-        }
-
         return contactFragmentBinding.root
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && requestCode == pickImage) {
-            imageUri = data?.data
-            profile_image.setImageURI(imageUri)
-        }
-    }
+
 }

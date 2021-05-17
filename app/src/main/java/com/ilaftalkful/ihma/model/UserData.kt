@@ -57,6 +57,24 @@ class UserData {
         return this
     }
 
+    fun registrationSuccess(): UserData {
+        this.status = UserStatus.REGISTRATION_SUCCESS
+        this.error = null
+        return this
+    }
+
+    fun registrationFailed(): UserData {
+        this.status = UserStatus.USER_REGISTRATION_FAILED
+        this.error = null
+        return this
+    }
+
+    fun sessionExpired(): UserData {
+        this.status = UserStatus.SESSION_EXPIRED
+        this.error = null
+        return this
+    }
+
     interface UserStatus {
         companion object {
 
@@ -66,6 +84,9 @@ class UserData {
             val LOGIN_SUCCESS = 1001
             val OPERATION_STARTED=1002
             val USER_LOGIN_FAILED=1113
+            val REGISTRATION_SUCCESS = 1003
+            val SESSION_EXPIRED = 99
+            val USER_REGISTRATION_FAILED=102
 
         }
     }
