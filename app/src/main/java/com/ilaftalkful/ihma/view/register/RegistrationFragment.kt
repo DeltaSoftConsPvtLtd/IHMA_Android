@@ -53,6 +53,7 @@ class RegistrationFragment : IlafBaseFragment() {
         registerFragmentBinding.viewModel = viewModel
         registerFragmentBinding?.errors = UserRegistrationErrors("")
 
+
 //        //Image Uploading
         profile_image = registerFragmentBinding.profileImage
         profile_image.setOnClickListener {
@@ -61,44 +62,72 @@ class RegistrationFragment : IlafBaseFragment() {
 
 
         }
+        return registerFragmentBinding.root
+    }
+
+    //Taking photo from gallery
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (resultCode == Activity.RESULT_OK && requestCode == pickImage) {
+                imageUri = data?.data
+                profile_image.setImageURI(imageUri)
+            }
+        }
+
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         viewModel.userLiveData?.observe(viewLifecycleOwner, Observer {
             when (it.getStatus()) {
                 UserData.UserStatus.REGISTRATION_SUCCESS -> {
-                    IlafCommonAlert(requireActivity(),it.statusMessage,getString(R.string.ok),null,object :IlafCommonAlert.IlafDialogListener{
-                        override fun onDialogPositiveClick() {
-                           Toast.makeText(activity,"Registration Success",Toast.LENGTH_LONG).show()
-                        }
+                    IlafCommonAlert(
+                        requireActivity(),
+                        it.statusMessage,
+                        getString(R.string.ok),
+                        null,
+                        object : IlafCommonAlert.IlafDialogListener {
+                            override fun onDialogPositiveClick() {
+                                Toast.makeText(activity, "Registration Success", Toast.LENGTH_LONG)
+                                    .show()
+                            }
 
-                        override fun onDialogNegativeClick() {
+                            override fun onDialogNegativeClick() {
 
-                        }
+                            }
 
-                    }).show()
+                        }).show()
                 }
 
                 UserData.UserStatus.ERROR -> {
 
                     var error = it.getError()
-                    if(error?.getErrorCode() == 100){
+                    if (error?.getErrorCode() == 100) {
                         error.errorMessage = getString(R.string.no_interbnet)
                     }
 
-                    IlafCommonAlert(requireActivity(),it.getError()?.getErrorMessage()?:getString(R.string.something_went_wrong),getString(R.string.ok),null,object :IlafCommonAlert.IlafDialogListener{
-                        override fun onDialogPositiveClick() {
-                        }
+                    IlafCommonAlert(
+                        requireActivity(),
+                        it.getError()?.getErrorMessage()
+                            ?: getString(R.string.something_went_wrong),
+                        getString(R.string.ok),
+                        null,
+                        object : IlafCommonAlert.IlafDialogListener {
+                            override fun onDialogPositiveClick() {
+                            }
 
-                        override fun onDialogNegativeClick() {
+                            override fun onDialogNegativeClick() {
 
-                        }
+                            }
 
-                    }).show()
+                        }).show()
                 }
 
 
             }
         })
-        return registerFragmentBinding.root
+
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -106,7 +135,7 @@ class RegistrationFragment : IlafBaseFragment() {
         if (Utility.checkInternetConnection(requireActivity())) {
             (activity as IlafBaseActivity).hideKeyboard()
 
-            Toast.makeText(activity,"Okkk",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Okkk", Toast.LENGTH_LONG).show()
 
             error.firstnameError =
                 IhmaValidator.isValidName(viewModel.firstName.value!!.trim(), requireActivity())
@@ -141,17 +170,6 @@ class RegistrationFragment : IlafBaseFragment() {
         }
 
     }
-
-
-    //Taking photo from gallery
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == pickImage) {
-            imageUri = data?.data
-            profile_image.setImageURI(imageUri)
-        }
-    }
-
 }
 
 

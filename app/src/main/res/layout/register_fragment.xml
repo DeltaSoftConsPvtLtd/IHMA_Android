@@ -311,9 +311,8 @@
                         android:background="@drawable/payment_button_bg"
                         android:gravity="center"
                         android:textColor="@color/white"
-                        android:textSize="30dp"
+                        android:textSize="30sp"
                         android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
-                        android:enabled="@{viewModel.isValid}"
                         android:onClick="@{(v)->fragment.onRegisterClicked(v,errors)}"
                         android:textAllCaps="false" />
 
