@@ -75,9 +75,10 @@
 
     <fragment
         android:id="@+id/register_fragment"
-        android:name="com.ilaftalkful.ihma.view.register.RegisterFragment"
+        android:name="com.ilaftalkful.ihma.view.register.RegistrationFragment"
         android:label="@string/register"
         tools:layout="@layout/register_fragment">
+
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"

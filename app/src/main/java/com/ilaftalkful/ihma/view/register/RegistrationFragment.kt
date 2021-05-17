@@ -50,6 +50,7 @@ class RegistrationFragment : IlafBaseFragment() {
             false
         )
         registerFragmentBinding.lifecycleOwner = this
+        registerFragmentBinding?.fragment = this
         registerFragmentBinding.viewModel = viewModel
         registerFragmentBinding?.errors = UserRegistrationErrors("")
 
@@ -84,13 +85,12 @@ class RegistrationFragment : IlafBaseFragment() {
                 UserData.UserStatus.REGISTRATION_SUCCESS -> {
                     IlafCommonAlert(
                         requireActivity(),
-                        it.statusMessage,
+                        getString(R.string.registration_success),
                         getString(R.string.ok),
                         null,
                         object : IlafCommonAlert.IlafDialogListener {
                             override fun onDialogPositiveClick() {
-                                Toast.makeText(activity, "Registration Success", Toast.LENGTH_LONG)
-                                    .show()
+                               Toast.makeText(activity,"Success",Toast.LENGTH_LONG).show()
                             }
 
                             override fun onDialogNegativeClick() {
@@ -134,8 +134,6 @@ class RegistrationFragment : IlafBaseFragment() {
     fun onRegisterClicked(view: View, error: UserRegistrationErrors) {
         if (Utility.checkInternetConnection(requireActivity())) {
             (activity as IlafBaseActivity).hideKeyboard()
-
-            Toast.makeText(activity, "Okkk", Toast.LENGTH_LONG).show()
 
             error.firstnameError =
                 IhmaValidator.isValidName(viewModel.firstName.value!!.trim(), requireActivity())

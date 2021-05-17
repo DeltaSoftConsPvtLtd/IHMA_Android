@@ -52,7 +52,7 @@
                             android:id="@+id/first_name_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:background="@color/white"
                             android:text="@={viewModel.firstName}"
                             android:hint="First Name"/>
@@ -72,7 +72,7 @@
                             android:id="@+id/last_name_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:background="@color/white"
                             android:text="@={viewModel.lastName}"
                             android:hint="Last Name"/>
@@ -92,7 +92,7 @@
                             android:id="@+id/register_no_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="phone"
                             android:background="@color/white"
                             android:text="@={viewModel.registrationNo}"
                             android:hint="Registration Number"/>
@@ -112,7 +112,7 @@
                             android:id="@+id/mobile_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="phone"
                             android:background="@color/white"
                             android:text="@={viewModel.mobile}"
                             android:hint="Mobile"/>
@@ -217,7 +217,7 @@
                             android:id="@+id/address_home_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:background="@color/white"
                             android:text="@={viewModel.addressHome}"
                             android:hint="Address Home"/>
@@ -236,7 +236,7 @@
                             android:id="@+id/address_clinic_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:background="@color/white"
                             android:text="@={viewModel.addressClinic}"
                             android:hint="Address Clinic"/>
@@ -312,6 +312,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="30sp"
+                        android:enabled="@{viewModel.isValid}"
                         android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
                         android:onClick="@{(v)->fragment.onRegisterClicked(v,errors)}"
                         android:textAllCaps="false" />

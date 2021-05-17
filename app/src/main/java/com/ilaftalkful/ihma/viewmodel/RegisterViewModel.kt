@@ -70,7 +70,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userLiveData?.processing()
         var loginService = UserService.create(getApplication<Application>(), false)
         val subscribe =
-            loginService?.doRegisterIn(userDetails)?.observeOn(
+            loginService?.doRegisterIn()?.observeOn(
                 AndroidSchedulers.mainThread()
             )
                 ?.subscribeOn(

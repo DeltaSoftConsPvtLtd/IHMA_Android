@@ -25,7 +25,7 @@
         />
 
     <item
-        android:id="@+id/registrationFragment"
+        android:id="@+id/register_fragment"
         android:icon="@drawable/ic_nav_mylogs_inactive"
         android:title="Register"
         />

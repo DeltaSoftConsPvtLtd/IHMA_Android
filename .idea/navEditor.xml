@@ -878,13 +878,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="registrationFragment">
+                  <entry key="register_fragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-405" />
-                            <option name="y" value="355" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -897,18 +897,6 @@
                           <Point>
                             <option name="x" value="262" />
                             <option name="y" value="369" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="userRegistration">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="-406" />
-                            <option name="y" value="-342" />
                           </Point>
                         </option>
                       </LayoutPositions>

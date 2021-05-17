@@ -72,4 +72,5 @@
     <string name="name_empty">Name Cannot be empty</string>
     <string name="naem_alphabet_only">Name should contain alphabets only</string>
     <string name="invalid_phone">Invaild phone number</string>
+    <string name="registration_success">Successfully Registered</string>
 </resources>
