@@ -34,18 +34,20 @@ open class RegisterUserDetails  {
         set(value) {
             field = value
         }
-//    @SerializedName("state")
-//    var state : String? = null
-//        get() = field
-//        set(value) {
-//            field = value
-//        }
-//    @SerializedName("districts")
-//    var districts : String? = null
-//        get() = field
-//        set(value) {
-//            field = value
-//        }
+
+    @SerializedName("state")
+    var state : String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    @SerializedName("districts")
+    var districts : String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
 //    @SerializedName("collage_name")
 //    var collage_name : String? = null
 //        get() = field
@@ -80,11 +82,11 @@ open class RegisterUserDetails  {
 //            field = value
 //        }
 //
-//    @SerializedName("chapter")
-//    var chapter : String? = null
-//        get() = field
-//        set(value) {
-//            field = value
-//        }
+    @SerializedName("chapter")
+    var chapter : String? = null
+        get() = field
+        set(value) {
+            field = value
+        }
 
 }

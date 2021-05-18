@@ -1,4 +1,4 @@
-/build
+# Created by .ignore support plugin (hsz.mobi)
 ### Android template
 # Built application files
 *.apk
@@ -90,3 +90,6 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+.gitignore
+.gradle/6.5/vcsMetadata-1/
+app/build/

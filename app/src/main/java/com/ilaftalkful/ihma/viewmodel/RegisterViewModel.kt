@@ -31,6 +31,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     val email = MutableLiveData<String>()
     val addressHome = MutableLiveData<String>()
     val addressClinic = MutableLiveData<String>()
+    private var stateValue = ""
 
 
     init {
@@ -48,6 +49,10 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userDetails.registration_number = registrationNo.value?.trim()
         userDetails.phone = mobile.value?.trim()
         userDetails.address = addressHome.value?.trim()
+        userDetails.state = stateValue.trim()
+        userDetails.districts = stateValue.trim()
+        userDetails.chapter = stateValue.trim()
+
 
 
 
@@ -165,20 +170,21 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     }
 //Method For Selecting Spinner Value
 
-//    fun onSelectItem(
-//        parent: AdapterView<*>?,
-//        view: View?,
-//        pos: Int,
-//        id: Long
-//    ) {
-//        val value = parent?.getItemAtPosition(2)
-//        Log.d("Value", value as String)
-//        //pos                                 get selected item position
-//        //view.getText()                      get lable of selected item
-//        //parent.getAdapter().getItem(pos)    get item by pos
-//        //parent.getAdapter().getCount()      get item count
-//        //parent.getCount()                   get item count
-//        //parent.getSelectedItem()            get selected item
-//        //and other...
-//    }
+    fun onSelectItem(
+        parent: AdapterView<*>?,
+        view: View?,
+        pos: Int,
+        id: Long
+    ) {
+        stateValue  = parent?.selectedItem as String
+        Log.d("Value", stateValue as String)
+
+        //pos                                 get selected item position
+        //view.getText()                      get lable of selected item
+        //parent.getAdapter().getItem(pos)    get item by pos
+        //parent.getAdapter().getCount()      get item count
+        //parent.getCount()                   get item count
+        //parent.getSelectedItem()            get selected item
+        //and other...
+    }
 }
