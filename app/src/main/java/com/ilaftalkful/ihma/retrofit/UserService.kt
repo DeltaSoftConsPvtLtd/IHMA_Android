@@ -22,8 +22,8 @@ interface UserService {
         "accept: application/json",
         "Content-Type: application/json"
     )
-    @GET("getRegisterDetail/")
-    fun doRegisterIn(): Observable<Response<UserLoginResponse>>
+    @POST("getRegisterDetail/")
+    fun doRegisterIn(@Body details: RegisterUserDetails): Observable<Response<UserLoginResponse>>
 
     companion object Factory {
         fun create(application: Application, isAuth: Boolean): UserService? {

@@ -9,14 +9,14 @@ data  class User(val anme: String? = null) : BaseObservable() {
     var username: String? = null
 
 
-    @SerializedName("return_to_url")
-    var return_to_url: String? = null
-
-    @SerializedName("session_token")
-    var session_token: String? = null
-
-    @SerializedName("status")
-    var status: String? = null
+//    @SerializedName("return_to_url")
+//    var return_to_url: String? = null
+//
+//    @SerializedName("session_token")
+//    var session_token: String? = null
+//
+//    @SerializedName("status")
+//    var status: String? = null
 
 
     @SerializedName("user")

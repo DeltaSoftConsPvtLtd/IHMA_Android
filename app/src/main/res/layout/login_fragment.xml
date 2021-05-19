@@ -62,7 +62,6 @@
                 style="@style/editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
                 android:text="@={viewModel.username}"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,12 +74,16 @@
             app:errorTextColor="@color/white"
             app:errorIconTint="@color/white"
             android:hint="@string/password"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/white"
             android:layout_margin="10dp"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_et"
                 style="@style/editText"
+                android:inputType="textPassword"
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content"
@@ -114,7 +117,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
-                android:enabled="@{viewModel.isValid}"
                 android:onClick="@{(v)->fragment.onLoginClicked(v,errors)}"
                 android:padding="10dp"
                 android:text="@string/login"

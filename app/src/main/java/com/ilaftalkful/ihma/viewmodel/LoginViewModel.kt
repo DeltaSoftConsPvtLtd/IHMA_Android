@@ -94,14 +94,14 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 })
     }
 
-    var isValid: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
-        addSource(username) {
-            value = it.isNotEmpty() && password.value?.isNotEmpty() ?: false
-        }
-        addSource(password) {
-            value = it.isNotEmpty() && username.value?.isNotEmpty() ?: false
-        }
-
-    }
+//    var isValid: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
+//        addSource(username) {
+//            value = it.isNotEmpty() && password.value?.isNotEmpty() ?: false
+//        }
+//        addSource(password) {
+//            value = it.isNotEmpty() && username.value?.isNotEmpty() ?: false
+//        }
+//
+//    }
 }
 

@@ -1,10 +1,12 @@
 package com.ilaftalkful.ihma.viewmodel
 
+import android.R
 import android.app.Application
 import android.os.Build
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Spinner
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MediatorLiveData
@@ -17,7 +19,7 @@ import com.ilaftalkful.ihma.retrofit.UserService
 import com.ilaftalkful.ihma.utilities.IhmaValidator
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import javax.crypto.Cipher
+
 
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -44,6 +46,20 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
   fun callRegistration(error: UserRegistrationErrors) {
 //
         val userDetails = RegisterUserDetails()
+
+       userDetails.username ="test15"
+       userDetails.email = "test2@test.com"
+       userDetails.password = "arjunnair"
+       userDetails.password2 = "arjunnair"
+       userDetails.collage_name = 1
+       userDetails.chapter =1
+       userDetails.membership_fee =1
+       userDetails.status = "pending_approval"
+       userDetails.user_type = "doctor"
+       userDetails.id_no = 1
+       userDetails.blood_group = "A+ve"
+
+
         userDetails.first_name = firstName.value?.trim()
         userDetails.last_name = lastName.value?.trim()
         userDetails.registration_number = registrationNo.value?.trim()
@@ -51,7 +67,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userDetails.address = addressHome.value?.trim()
         userDetails.state = stateValue.trim()
         userDetails.districts = stateValue.trim()
-        userDetails.chapter = stateValue.trim()
+
 
 
 
@@ -75,7 +91,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userLiveData?.processing()
         var loginService = UserService.create(getApplication<Application>(), false)
         val subscribe =
-            loginService?.doRegisterIn()?.observeOn(
+            loginService?.doRegisterIn(userDetails)?.observeOn(
                 AndroidSchedulers.mainThread()
             )
                 ?.subscribeOn(
@@ -179,6 +195,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         stateValue  = parent?.selectedItem as String
         Log.d("Value", stateValue as String)
 
+
         //pos                                 get selected item position
         //view.getText()                      get lable of selected item
         //parent.getAdapter().getItem(pos)    get item by pos
@@ -186,5 +203,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         //parent.getCount()                   get item count
         //parent.getSelectedItem()            get selected item
         //and other...
+
     }
+
 }

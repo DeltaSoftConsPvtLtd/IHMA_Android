@@ -1,7 +1,9 @@
 package com.ilaftalkful.ihma.bindingAdaptor
 
+import android.annotation.SuppressLint
 import android.view.KeyEvent
 import android.view.View
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.AdapterView
@@ -13,13 +15,21 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableField
 import com.google.android.material.textfield.TextInputLayout
 
+
 @BindingAdapter("setWebViewClient")
 fun setWebViewClient(view: WebView, client: WebViewClient?) {
     view.webViewClient = client
 }
 
+@SuppressLint("SetJavaScriptEnabled")
 @BindingAdapter("loadUrl")
 fun loadUrl(view: WebView, url: String?) {
+
+    view.getSettings().setDomStorageEnabled(true);
+    view.getSettings().setJavaScriptEnabled(true);
+    view.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+    view.getSettings().setPluginState(WebSettings.PluginState.ON);
+    view.getSettings().setMediaPlaybackRequiresUserGesture(false);
     view.loadUrl(url)
 }
 
