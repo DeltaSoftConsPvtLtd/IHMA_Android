@@ -35,6 +35,7 @@ class RegistrationFragment : IlafBaseFragment() {
     val viewModel: RegisterViewModel by viewModels()
 
     lateinit var profile_image: ImageView
+    lateinit var back_arrow: ImageView
     private val pickImage = 100
     private var imageUri: Uri? = null
 
@@ -61,6 +62,12 @@ class RegistrationFragment : IlafBaseFragment() {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
 
+
+        }
+        back_arrow=  registerFragmentBinding.backarrowId
+        back_arrow.setOnClickListener {
+
+            findNavController().navigate(R.id.action_show_login_from_register)
 
         }
         return registerFragmentBinding.root
@@ -90,7 +97,7 @@ class RegistrationFragment : IlafBaseFragment() {
                         null,
                         object : IlafCommonAlert.IlafDialogListener {
                             override fun onDialogPositiveClick() {
-                               Toast.makeText(activity,"Success",Toast.LENGTH_LONG).show()
+                                findNavController().navigate(R.id.action_show_login_from_register)
                             }
 
                             override fun onDialogNegativeClick() {
@@ -99,6 +106,24 @@ class RegistrationFragment : IlafBaseFragment() {
 
                         }).show()
                 }
+                UserData.UserStatus.USER_REGISTRATION_FAILED -> {
+                IlafCommonAlert(
+                    requireActivity(),
+                    it.statusMessage ?: getString(R.string.registration_failed),
+                    getString(R.string.ok),
+                    null,
+                    object : IlafCommonAlert.IlafDialogListener {
+                        override fun onDialogPositiveClick() {
+                        }
+
+                        override fun onDialogNegativeClick() {
+
+                        }
+
+                    }).show()
+
+            }
+
 
                 UserData.UserStatus.ERROR -> {
 
@@ -145,16 +170,25 @@ class RegistrationFragment : IlafBaseFragment() {
                 IhmaValidator.isValidEmails(viewModel.email.value!!, requireActivity())
             error.registrationNoError =
                 IhmaValidator.isValidEmails(viewModel.email.value!!, requireActivity())
+            error.userName =
+                IhmaValidator.isValidUserName(viewModel.username.value!!, requireActivity())
+            error.passwordError = IhmaValidator.isValidUserPassword(viewModel.password.value,requireActivity())
+            error.confirmPasswordError = IhmaValidator.isValidUserPassword(viewModel.confirmpassword.value,requireActivity())
+
+            if(viewModel.password.value.equals(viewModel.confirmpassword.value)){
+                error.confirmPasswordError=""
+            }else{
+                error.confirmPasswordError="Password  & Confirm Password do not match"
+            }
 
 
-            if (IhmaValidator.isNullOrEmpty(error.firstnameError)
-                && IhmaValidator.isNullOrEmpty(error.lastnameError)
+
+            if (IhmaValidator.isNullOrEmpty(error.userNameError)
+                && IhmaValidator.isNullOrEmpty(error.passwordError)
                 && IhmaValidator.isNullOrEmpty(error.phoneNumberError)
                 && IhmaValidator.isNullOrEmpty(error.userEmailError)
-                && IhmaValidator.isNullOrEmpty(error.registrationNoError)
-                && IhmaValidator.isNullOrEmpty(error.addressHomeError)
-                && IhmaValidator.isNullOrEmpty(error.addressClinicError)
-            ) {
+                && IhmaValidator.isNullOrEmpty(error.registrationNoError))
+            {
                 viewModel.callRegistration(error)
             }
         } else {

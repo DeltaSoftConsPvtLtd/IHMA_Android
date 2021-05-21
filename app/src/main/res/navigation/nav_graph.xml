@@ -79,6 +79,15 @@
         android:label="@string/register"
         tools:layout="@layout/register_fragment">
 
+        <action android:id="@+id/action_show_login_from_register"
+            app:destination="@id/login_fragment"
+            app:exitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/register_fragment"/>
+
     </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"

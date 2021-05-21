@@ -67,6 +67,7 @@ fun setAutoCompleteAdapter(textView: AutoCompleteTextView, adapter: ArrayAdapter
             } else
                 view.error = errorMessage
         };
+
     }
 
 

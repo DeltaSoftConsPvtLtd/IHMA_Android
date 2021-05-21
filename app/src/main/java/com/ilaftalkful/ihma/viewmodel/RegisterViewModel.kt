@@ -31,6 +31,9 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     val registrationNo = MutableLiveData<String>()
     val mobile = MutableLiveData<String>()
     val email = MutableLiveData<String>()
+    val username = MutableLiveData<String>()
+    val password = MutableLiveData<String>()
+    val confirmpassword = MutableLiveData<String>()
     val addressHome = MutableLiveData<String>()
     val addressClinic = MutableLiveData<String>()
     private var stateValue = ""
@@ -46,11 +49,6 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
   fun callRegistration(error: UserRegistrationErrors) {
 //
         val userDetails = RegisterUserDetails()
-
-       userDetails.username ="test15"
-       userDetails.email = "test2@test.com"
-       userDetails.password = "arjunnair"
-       userDetails.password2 = "arjunnair"
        userDetails.collage_name = 1
        userDetails.chapter =1
        userDetails.membership_fee =1
@@ -59,7 +57,6 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
        userDetails.id_no = 1
        userDetails.blood_group = "A+ve"
 
-
         userDetails.first_name = firstName.value?.trim()
         userDetails.last_name = lastName.value?.trim()
         userDetails.registration_number = registrationNo.value?.trim()
@@ -67,19 +64,17 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userDetails.address = addressHome.value?.trim()
         userDetails.state = stateValue.trim()
         userDetails.districts = stateValue.trim()
+        userDetails.username=username.value?.trim()
+        userDetails.email=email.value?.trim()
+        userDetails.password = password.value?.trim()
+        userDetails.password2 = confirmpassword.value?.trim()
 
 
-
-
-
-
-       if (IhmaValidator.isNullOrEmpty(error.firstnameError)
-           && IhmaValidator.isNullOrEmpty(error.lastnameError)
+       if (IhmaValidator.isNullOrEmpty(error.userNameError)
+           && IhmaValidator.isNullOrEmpty(error.passwordError)
            && IhmaValidator.isNullOrEmpty(error.phoneNumberError)
            && IhmaValidator.isNullOrEmpty(error.userEmailError)
            && IhmaValidator.isNullOrEmpty(error.registrationNoError)
-           && IhmaValidator.isNullOrEmpty(error.addressHomeError)
-           && IhmaValidator.isNullOrEmpty(error.addressClinicError)
        ) {
             error.uiUpdate = true
             tryRegistration(userDetails, error)
@@ -108,7 +103,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
                                 userLiveData?.userRegisterFailed()
                             }
                         } else {
-                            if (it.code() == 400) {
+                            if (it.code() == 404) {
                                 userLiveData?.userRegisterFailed()
                             }
                             errorData.uiUpdate = false

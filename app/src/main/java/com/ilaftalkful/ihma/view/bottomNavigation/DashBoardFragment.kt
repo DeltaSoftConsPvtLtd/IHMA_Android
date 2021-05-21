@@ -69,11 +69,8 @@ class DashBoardFragment : IlafBaseFragment() {
         val  navController:NavController = Navigation.findNavController(view.findViewById(R.id.home_fragment_nav_host))
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.apply_fragment -> {
-
-                   dashboardBinding.toolbarHome.visibility = View.GONE
-
-
+                R.id.home_fragment -> {
+                    dashboardBinding.toolbarHome.visibility = View.GONE
                 }
                 else -> {
                     dashboardBinding.toolbarHome.visibility = View.VISIBLE

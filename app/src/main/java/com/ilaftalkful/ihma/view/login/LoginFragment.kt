@@ -28,7 +28,7 @@ import org.checkerframework.checker.units.qual.Length
 class LoginFragment : IlafBaseFragment() {
 
     val viewModel: LoginViewModel by viewModels()
-    var loginFragmentBinding :LoginFragmentBinding?=null
+    var loginFragmentBinding: LoginFragmentBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,9 +46,6 @@ class LoginFragment : IlafBaseFragment() {
         loginFragmentBinding?.errors = SignInErrors("")
         return loginFragmentBinding?.root
     }
-
-
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -107,29 +104,35 @@ class LoginFragment : IlafBaseFragment() {
         })
     }
 
-            fun onGuestClicked(view: View) {
-                IlafSharedPreference(requireContext()).setBooleanPrefValue(
-                    IlafSharedPreference.Constants.IS_GUEST_LOGIN,
-                    true
-                )
-                findNavController().navigate(R.id.action_show_home_guest)
-            }
 
-            fun onRegisterClicked(view: View) {
-                findNavController().navigate(R.id.action_show_register)
-            }
 
-            fun onResetPasswordClicked(view: View) {
-                findNavController().navigate(R.id.action_login_fragment_to_resetPasswordFragment)
-            }
+    fun onRegisterClicked(view: View) {
+        findNavController().navigate(R.id.action_show_register)
+    }
+
+
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    fun onLoginClicked(view: View,errors: SignInErrors) {
+    fun onLoginClicked(view: View, errors: SignInErrors) {
         if (Utility.checkInternetConnection(requireActivity())) {
             (activity as IlafBaseActivity).hideKeyboard()
-            errors.userNameError = IhmaValidator.isValidUserName(viewModel.username.value!!.trim(),requireActivity())
-            errors.userPasswordError = IhmaValidator.isValidUserPassword(viewModel.password.value!!.trim(),requireActivity())
+
+            if (viewModel.username.value.isNullOrEmpty()) {
+                errors.userNameError = "Username cannot be Empty"
+            } else if (viewModel.password.value.isNullOrEmpty()) {
+                errors.userPasswordError = "Password cannot be Empty"
+            } else {
+                errors.userNameError = IhmaValidator.isValidUserName(
+                    viewModel.username.value!!.trim(),
+                    requireActivity()
+                )
+                errors.userPasswordError = IhmaValidator.isValidUserPassword(
+                    viewModel.password.value!!.trim(),
+                    requireActivity()
+                )
+            }
+
             viewModel.callLogin(errors)
         } else {
             IlafCommonAlert(
@@ -142,9 +145,11 @@ class LoginFragment : IlafBaseFragment() {
         }
 
     }
+}
 
 
-    }
+
+
 
 
 

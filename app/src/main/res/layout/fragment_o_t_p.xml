@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please Enter the OTP you received on your phone number"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_marginStart="30dp"
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/cardview_bg"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp">
         <TextView
@@ -105,7 +105,7 @@
         android:background="@drawable/lightblue_button_bg"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textAllCaps="false" />
 
 </LinearLayout>

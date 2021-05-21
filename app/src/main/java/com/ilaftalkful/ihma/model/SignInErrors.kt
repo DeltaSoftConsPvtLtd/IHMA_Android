@@ -7,7 +7,7 @@ import com.ilaftalkful.ihma.BR
 
 data class SignInErrors(var userName : String?) : BaseObservable() {
 
-    var userNameError : String? = ""
+    var userNameError : String? = null
         @Bindable
         get() = field
         set(value) {
@@ -17,7 +17,7 @@ data class SignInErrors(var userName : String?) : BaseObservable() {
             }
 
         }
-    var userPasswordError : String? = ""
+    var userPasswordError : String? = null
         @Bindable
         get() = field
         set(value) {

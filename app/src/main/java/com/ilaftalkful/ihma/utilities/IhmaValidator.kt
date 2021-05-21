@@ -16,18 +16,69 @@ class IhmaValidator(context: Context) {
                 errorMSg = context?.getString(R.string.password_no_empty)
                 return errorMSg
             }
-//
+//            if (hasSpace(password)) {
+//                errorMSg = context?.getString(R.string.space_pasword)
+//                return errorMSg
+//            }
+//            if (!hasNumericValues(password)) {
+//                errorMSg = context?.getString(R.string.one_numeric)
+//                return errorMSg
+//            }
+//            if (!containsAtleastOneAlphabet(password)) {
+//                errorMSg = context?.getString(R.string.at_least_one_alphabet)
+//                return errorMSg
+//            }
+            if (!isValidLength(password, 6)) {
+                errorMSg = context?.getString(R.string.password_length)
+                return errorMSg
+            }
             return errorMSg
+        }
+
+        private fun containsAtleastOneAlphabet(s: String?): Boolean {
+
+            if (s != null) {
+                return s.matches(".*[a-zA-Z]+.*".toRegex())
+            }
+            return false
+        }
+
+        fun hasSpace(value: String?): Boolean {
+            if (value != null) {
+                return value.contains(" ")
+            }
+            return true
+        }
+
+        private fun hasNumericValues(value: String?): Boolean {
+            if (value != null) {
+                return value.matches(".*\\d+.*".toRegex())
+            }
+            return true
+        }
+
+        fun isValidLength(value: String?, minLength: Int): Boolean {
+
+            if (value != null) {
+                if (value.length < minLength) {
+                    return false
+                }
+            }
+            return true
         }
 
 
 
-        fun isValidUserName(email: String,context:Context?): String? {
+
+        fun isValidUserName(username: String,context:Context?): String? {
             var errorMSg: String? = null
-            if (isNullOrEmpty(email)) {
+            if (isNullOrEmpty(username)) {
                 errorMSg = context?.getString(R.string.email_empty)
                 return errorMSg
             }
+//            if (!Pattern.matches("[a-zA-Z ]+", username)) {
+//                errorMSg = context?.getString(R.string.naem_alphabet_only)
+//            }
 
             return errorMSg
         }

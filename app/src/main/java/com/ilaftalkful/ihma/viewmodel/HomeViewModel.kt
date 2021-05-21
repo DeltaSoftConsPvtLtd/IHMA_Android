@@ -11,7 +11,7 @@ import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 
 
 class HomeViewModel(application: Application) : AndroidViewModel(application){
-    val webViewUrl  = "http://elearnihma.in/"
+    val webViewUrl  = "http://elearnihma.in/course/index.php"
     //val webViewUrl  = "https://www.google.com/"
     var isGusetLogin: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
     var ilafPreference: IlafSharedPreference? = null

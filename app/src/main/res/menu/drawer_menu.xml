@@ -2,36 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ilaftalkful.ilaf.view.SplashActivity">
-    <item
-        android:id="@+id/viewProfileFragment"
-        android:icon="@drawable/ic_nav_products_white"
-        android:title="View_Profile"
-        />
-    <item
-        android:id="@+id/myCoursesFragment"
-        android:icon="@drawable/ic_nav_contact_inactive"
-        android:title="My Courses"
-        />
-    <item
-        android:id="@+id/settingsFragment_id"
-        android:icon="@drawable/ic_nav_mylogs_inactive"
-        android:title="Settings"
-        />
 
-    <item
-        android:id="@+id/OTPFragment"
-        android:icon="@drawable/ic_nav_mylogs_inactive"
-        android:title="OTP"
-        />
 
-    <item
-        android:id="@+id/register_fragment"
-        android:icon="@drawable/ic_nav_mylogs_inactive"
-        android:title="Register"
-        />
     <item
         android:id="@+id/logout"
-        android:icon="@drawable/ic_nav_mylogs_inactive"
+        android:icon="@drawable/ic_baseline_login_24"
         android:title="Logout"
+
         />
 </menu>

@@ -15,138 +15,87 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <FrameLayout
+
+            <TextView
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:background="@color/colorPrimary"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:textSize="25dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/aboutUs_T1">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/rounded_layout"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:layout_marginTop="200dp" >
+            </TextView>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Congratulations"
-                        android:textSize="30dp"
-                        android:layout_marginTop="100dp"
-                        android:textColor="@color/black"
-                        android:gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Your membership is approved"
-                        android:layout_marginTop="5dp"
-                        android:textColor="@color/colorPrimary"
-                        android:gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Now pay your membership fee"
-                        android:textStyle="bold"
-                        android:layout_marginTop="20dp"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:gravity="center" />
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:gravity="center"
-                        android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:text="@string/aboutUs_T2">
 
-                        <TextView
-                            android:id="@+id/annual_id"
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:text="Annual"
-                            android:textSize="20dp"
-                            android:padding="5dp"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:background="@drawable/leftrounded_button_bg">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/aboutUs_T3">
 
-                        </TextView>
-                        <TextView
-                            android:id="@+id/lifetime_id"
-                            android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:text="Lifetime"
-                            android:padding="5dp"
-                            android:textStyle="bold"
-                            android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:textColor="@color/white"
-                            android:background="@drawable/rightrounded_button_bg">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:text="@string/aboutUs_T4">
 
-                        </TextView>
+            </TextView>
 
-                    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:textStyle="normal"
+                android:text="@string/aboutUs_T5">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Annual Membership Fee"
-                        android:layout_marginTop="30dp"
-                        android:textSize="20dp"
-                        android:textColor="@color/black"
-                        android:gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="1000"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:textSize="35dp"
-                        android:textColor="@color/colorPrimary"
-                        android:gravity="center"
-                        />
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:text="@string/aboutUs_T6">
 
-                    <TextView
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/aboutUs_T7"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:textStyle="normal">
 
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
-                        android:padding="10dp"
-                        android:text="Pay Now"
-                        android:background="@drawable/payment_button_bg"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="18dp"
-                        android:textAllCaps="false"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        />
-                </LinearLayout>
+            </TextView>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="100dp"
-                    android:layout_height="wrap_content" >
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:src="@drawable/jacinda"
-                        android:layout_marginTop="10dp"
-                        android:layout_centerHorizontal="true" />
-
-                </RelativeLayout>
-
-            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>

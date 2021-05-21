@@ -34,9 +34,9 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         userLiveData = UserLiveUpdate()
         error = SignInErrors("")
 
-        if (username.value?.isEmpty() ?: false) {
-            isUsernameEmpty.postValue(true)
-        }
+//        if (username.value?.isEmpty() ?: false) {
+//            isUsernameEmpty.postValue(true)
+//        }
 
     }
 
@@ -79,7 +79,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                             userLiveData?.userLoginFailed()
                         }
                     } else {
-                        if (it.code() == 400) {
+                        if (it.code() == 404) {
                             userLiveData?.userLoginFailed()
                         }
                         errorData.uiUpdate = false
@@ -94,14 +94,14 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 })
     }
 
-//    var isValid: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
-//        addSource(username) {
-//            value = it.isNotEmpty() && password.value?.isNotEmpty() ?: false
-//        }
-//        addSource(password) {
-//            value = it.isNotEmpty() && username.value?.isNotEmpty() ?: false
-//        }
-//
-//    }
+    var isValid: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
+        addSource(username) {
+            value = it.isNotEmpty() && password.value?.isNotEmpty() ?: false
+        }
+        addSource(password) {
+            value = it.isNotEmpty() && username.value?.isNotEmpty() ?: false
+        }
+
+    }
 }
 

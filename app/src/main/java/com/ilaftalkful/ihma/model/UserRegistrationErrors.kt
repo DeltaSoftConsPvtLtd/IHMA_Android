@@ -50,6 +50,27 @@ data class UserRegistrationErrors(var userName : String?) : BaseObservable() {
 
         }
 
+    var userNameError : String? = null
+        @Bindable
+        get() = field
+        set(value) {
+            if (field != value) {
+                field = value
+                notifyPropertyChanged(BR.userNameError)
+            }
+
+        }
+
+    var passwordError : String? = null
+        @Bindable
+        get() = field
+        set(value) {
+            if (field != value) {
+                field = value
+                notifyPropertyChanged(BR.passwordError)
+            }
+
+        }
     var userEmailError : String? = null
         @Bindable
         get() = field
@@ -57,6 +78,17 @@ data class UserRegistrationErrors(var userName : String?) : BaseObservable() {
             if (field != value) {
                 field = value
                 notifyPropertyChanged(BR.userEmailError)
+            }
+
+        }
+
+    var confirmPasswordError : String? = null
+        @Bindable
+        get() = field
+        set(value) {
+            if (field != value) {
+                field = value
+                notifyPropertyChanged(BR.confirmPasswordError)
             }
 
         }

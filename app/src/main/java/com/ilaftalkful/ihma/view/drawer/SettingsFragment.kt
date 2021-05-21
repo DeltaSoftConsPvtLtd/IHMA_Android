@@ -17,10 +17,9 @@ import androidx.fragment.app.viewModels
 import com.ilaftalkful.ihma.R
 import com.ilaftalkful.ihma.bindingAdaptor.NotificationAdapter
 import com.ilaftalkful.ihma.databinding.FragmentSettingsBinding
-import com.ilaftalkful.ihma.databinding.HomeFragmentBinding
 import com.ilaftalkful.ihma.viewmodel.HomeViewModel
 import com.ilaftalkful.ihma.viewmodel.SettingsViewModel
-import kotlinx.android.synthetic.main.home_fragment.*
+
 
 
 class SettingsFragment : Fragment() {
