@@ -35,6 +35,7 @@ fun loadUrl(view: WebView, url: String?) {
 
 
 
+
 @BindingAdapter("clicks")
     fun listenClicks(spinner: AppCompatSpinner, result: ObservableField<String>) {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -14,14 +15,12 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.ilaftalkful.ihma.R
 import com.ilaftalkful.ihma.base.IlafBaseFragment
 import com.ilaftalkful.ihma.databinding.DashboardFragmentBinding
 import com.ilaftalkful.ihma.viewmodel.DashboardViewModel
-import kotlinx.android.synthetic.main.dashboard_fragment.*
 import kotlinx.android.synthetic.main.dashboard_fragment.view.*
 
 
@@ -65,6 +64,15 @@ class DashBoardFragment : IlafBaseFragment() {
 
           }
 
+        dashboardBinding.navigationView.getMenu().findItem(R.id.logout).setOnMenuItemClickListener({ menuItem ->
+
+            findNavController().navigate(R.id.action_dashboard_fragment_to_login_fragment)
+            activity?.finishAffinity()
+            return@setOnMenuItemClickListener true;
+
+
+        })
+
 
         val  navController:NavController = Navigation.findNavController(view.findViewById(R.id.home_fragment_nav_host))
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -77,6 +85,8 @@ class DashBoardFragment : IlafBaseFragment() {
                 }
             }
         }
+
+
         NavigationUI.setupWithNavController(dashboardBinding.bottomNavigation, navController)
         NavigationUI.setupWithNavController(dashboardBinding.navigationView, navController)
 

@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ihma">
+
         <activity
             android:name="com.ilaftalkful.ihma.view.SplashActivity"
             android:label="@string/app_name"

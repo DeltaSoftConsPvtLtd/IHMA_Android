@@ -120,19 +120,20 @@ class LoginFragment : IlafBaseFragment() {
 
             if (viewModel.username.value.isNullOrEmpty()) {
                 errors.userNameError = "Username cannot be Empty"
+
             } else if (viewModel.password.value.isNullOrEmpty()) {
                 errors.userPasswordError = "Password cannot be Empty"
-            } else {
-                errors.userNameError = IhmaValidator.isValidUserName(
-                    viewModel.username.value!!.trim(),
-                    requireActivity()
-                )
-                errors.userPasswordError = IhmaValidator.isValidUserPassword(
-                    viewModel.password.value!!.trim(),
-                    requireActivity()
-                )
-            }
 
+            } else {
+//                errors.userNameError = IhmaValidator.isValidUserName(
+//                    viewModel.username.value!!.trim(),
+//                    requireActivity()
+//                )
+//                errors.userPasswordError = IhmaValidator.isValidUserPassword(
+//                    viewModel.password.value!!.trim(),
+//                    requireActivity()
+//                )
+            }
             viewModel.callLogin(errors)
         } else {
             IlafCommonAlert(

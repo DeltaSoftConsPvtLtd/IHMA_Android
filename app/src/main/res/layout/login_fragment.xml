@@ -53,6 +53,7 @@
             app:errorTextColor="@color/white"
             app:errorIconTint="@color/white"
             android:layout_margin="10dp"
+            app:errorEnabled="true"
             app:errorText="@{errors.userNameError}"
             android:hint="@string/username"
             android:textColorHint="@color/white">
@@ -70,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorIconTint="@color/white"
+            app:errorEnabled="true"
             app:errorText="@{errors.userPasswordError}"
             app:errorTextColor="@color/white"
             android:hint="@string/password"
@@ -99,6 +101,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginTop="50dp"
+                android:enabled="@{viewModel.isValid}"
                 android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
                 android:onClick="@{(v)->fragment.onLoginClicked(v,errors)}"
                 android:padding="10dp"
@@ -136,28 +139,6 @@
                 android:fontFamily="@font/dmsans_reguler" />
 
         </LinearLayout>
-
-
-
-
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/forget_password"
-            android:textColor="@color/white"
-            android:fontFamily="@font/dmsans_reguler"
-            app:layout_constraintBottom_toTopOf="@+id/textView12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-
     </LinearLayout>
 
 </LinearLayout>

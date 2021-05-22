@@ -5,13 +5,15 @@ import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.databinding.Bindable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 
 
-class HomeViewModel(application: Application) : AndroidViewModel(application){
-    val webViewUrl  = "http://elearnihma.in/course/index.php"
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
+    val webViewUrl = "http://elearnihma.in/course/index.php"
+
     //val webViewUrl  = "https://www.google.com/"
     var isGusetLogin: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
     var ilafPreference: IlafSharedPreference? = null
@@ -22,9 +24,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application){
     }
 
 
-
     fun webClient(): WebViewClient? {
-        return  Client()
+        return Client()
     }
 
 
@@ -35,13 +36,25 @@ class HomeViewModel(application: Application) : AndroidViewModel(application){
             error: WebResourceError
         ) {
             super.onReceivedError(view, request, error)
-//        setHideProgress(true)
+            //setHideProgress(true)
         }
 
         override fun onPageFinished(view: WebView, url: String) {
             super.onPageFinished(view, url)
-//        setHideProgress(true)
+            //setHideProgress(true)
         }
+
+//        @Bindable
+//        fun hideProgress(): Boolean {
+//            return hideProgress()
+//        }
+//
+//        private fun setHideProgress(hideProgress: Boolean) {
+//            this.hideProgress() = hideProgress;
+//            notifyPropertyChanged(BR.hideProgress);
+//
+//        }
+
     }
 }
 

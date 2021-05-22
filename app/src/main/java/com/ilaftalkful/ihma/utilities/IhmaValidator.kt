@@ -16,18 +16,18 @@ class IhmaValidator(context: Context) {
                 errorMSg = context?.getString(R.string.password_no_empty)
                 return errorMSg
             }
-//            if (hasSpace(password)) {
-//                errorMSg = context?.getString(R.string.space_pasword)
-//                return errorMSg
-//            }
-//            if (!hasNumericValues(password)) {
-//                errorMSg = context?.getString(R.string.one_numeric)
-//                return errorMSg
-//            }
-//            if (!containsAtleastOneAlphabet(password)) {
-//                errorMSg = context?.getString(R.string.at_least_one_alphabet)
-//                return errorMSg
-//            }
+            if (hasSpace(password)) {
+                errorMSg = context?.getString(R.string.space_pasword)
+                return errorMSg
+            }
+            if (!hasNumericValues(password)) {
+                errorMSg = context?.getString(R.string.one_numeric)
+                return errorMSg
+            }
+            if (!containsAtleastOneAlphabet(password)) {
+                errorMSg = context?.getString(R.string.at_least_one_alphabet)
+                return errorMSg
+            }
             if (!isValidLength(password, 6)) {
                 errorMSg = context?.getString(R.string.password_length)
                 return errorMSg
