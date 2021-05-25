@@ -4,15 +4,15 @@ import android.content.Context
 import com.google.gson.GsonBuilder
 import com.ilaftalkful.ihma.utilities.Constants
 import com.ilaftalkful.ihma.utilities.IlafSharedPreference
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import com.sun.xml.bind.Util
+import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import java.util.Collections.singletonList
 import java.util.concurrent.TimeUnit
 
 
@@ -40,6 +40,7 @@ class  RetrofitClient {
             mUrl = API_BASE_URL_PROD
             this.converterFactory = converterFactory
             val builder = OkHttpClient().newBuilder()
+            builder.protocols(Collections.singletonList(Protocol.HTTP_1_1))
             builder.readTimeout(60, TimeUnit.SECONDS)
             builder.connectTimeout(60, TimeUnit.SECONDS)
 //            builder.addInterceptor(LanguageInterceptor())
@@ -50,6 +51,7 @@ class  RetrofitClient {
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             val client: OkHttpClient = builder.addInterceptor(interceptor).build()
 
+
             instance = Retrofit.Builder()
                 .addConverterFactory(getConverterFactory())
                 .client(client)
@@ -57,6 +59,9 @@ class  RetrofitClient {
                 .baseUrl(mUrl)
                 .build()
             return instance
+
+
+
         }
 
 
