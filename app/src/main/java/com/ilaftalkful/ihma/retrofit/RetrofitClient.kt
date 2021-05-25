@@ -23,7 +23,7 @@ class  RetrofitClient {
         private var mUrl: String? = null
         var pref:IlafSharedPreference? = null
         private var converterFactory: Converter.Factory? = null
-        val API_BASE_URL_PROD = "http://lmsihma.co.in/api/"
+        val API_BASE_URL_PROD = "https://lmsihma.co.in/api/"
        // val API_BASE_URL_DEV = "http://ilaftdtest.ap-south-1.elasticbeanstalk.com/"
         /**
          * Get retrofit client

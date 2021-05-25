@@ -12,11 +12,14 @@ import com.ilaftalkful.ihma.model.ErrorData
 import com.ilaftalkful.ihma.model.SignInErrors
 import com.ilaftalkful.ihma.model.UserDetails
 import com.ilaftalkful.ihma.model.UserLiveUpdate
+import com.ilaftalkful.ihma.retrofit.RetrofitClient.Companion.pref
 import com.ilaftalkful.ihma.retrofit.UserService
 import com.ilaftalkful.ihma.utilities.IhmaValidator
+import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import com.ilaftalkful.ihma.viewmodel.IlafBaseViewModel
 
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
@@ -33,6 +36,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     init {
         userLiveData = UserLiveUpdate()
         error = SignInErrors("")
+        pref = IlafSharedPreference(application)
 
 //        if (username.value?.isEmpty() ?: false) {
 //            isUsernameEmpty.postValue(true)
@@ -73,6 +77,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                     if (it.isSuccessful) {
                         if (it.code() == 200) {
                             errorData.uiUpdate = true
+                            IlafSharedPreference(getApplication()).setStringPrefValue(IlafSharedPreference.Constants.USER_NAME, userDetails.username)
                             userLiveData?.userLoginSuccess()
                         } else {
                             errorData.uiUpdate = false

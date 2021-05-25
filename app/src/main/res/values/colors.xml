@@ -9,9 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#0090ff</color>
     <color name="colorPrimaryDark">#0066b6</color>
-    <color name="colorAccent">#BFB7B4</color>
+    <color name="colorAccent">#A39F9D</color>
     <color name="text_color">#FAFAFA</color>
     <color name="border_white">#FAFAFA</color>
     <color name="lightblue">#0dbbd7</color>
     <color name="error_color">#BDAE00</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#FFFFFFFF</color>
 </resources>

@@ -32,7 +32,7 @@
 
         <ImageView
             android:layout_width="120dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo_new"
             android:layout_margin="10dp"
             android:layout_height="120dp"/>
         <TextView
@@ -53,15 +53,19 @@
             app:errorTextColor="@color/white"
             app:errorIconTint="@color/white"
             android:layout_margin="10dp"
+            app:hintTextColor="@color/white"
+            app:hintAnimationEnabled="true"
+            app:boxStrokeColor="@color/white"
+            android:textColorHint="@color/white"
             app:errorEnabled="true"
             app:errorText="@{errors.userNameError}"
-            android:hint="@string/username"
-            android:textColorHint="@color/white">
+            android:hint="@string/username">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username_et"
                 style="@style/editText"
                 android:layout_width="match_parent"
+                android:background="@color/colorPrimary"
                 android:layout_height="wrap_content"
                 android:text="@={viewModel.username}" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,9 +79,12 @@
             app:errorText="@{errors.userPasswordError}"
             app:errorTextColor="@color/white"
             android:hint="@string/password"
+            app:hintAnimationEnabled="true"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/white"
             android:layout_margin="10dp"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
             android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,7 +107,7 @@
                 android:textSize="15dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:enabled="@{viewModel.isValid}"
                 android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
                 android:onClick="@{(v)->fragment.onLoginClicked(v,errors)}"

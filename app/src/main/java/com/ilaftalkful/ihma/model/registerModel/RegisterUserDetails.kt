@@ -4,6 +4,14 @@ import com.google.gson.annotations.SerializedName
 
 open class RegisterUserDetails  {
 
+
+    @SerializedName("id_no")
+    var id_no : Int? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
     @SerializedName("username")
     var username : String? = null
         get() = field
@@ -95,12 +103,12 @@ open class RegisterUserDetails  {
             field = value
         }
 
-    @SerializedName("profile_pic")
-    var profile_pic : String? = null
-        get() = field
-        set(value) {
-            field = value
-        }
+//    @SerializedName("profile_pic")
+//    var profile_pic : String? = null
+//        get() = field
+//        set(value) {
+//            field = value
+//        }
 
     @SerializedName("user_type")
     var user_type : String? = null
@@ -116,12 +124,7 @@ open class RegisterUserDetails  {
             field = value
         }
 
-    @SerializedName("id_no")
-    var id_no : Int? = null
-        get() = field
-        set(value) {
-            field = value
-        }
+
 
     @SerializedName("blood_group")
     var blood_group : String? = null

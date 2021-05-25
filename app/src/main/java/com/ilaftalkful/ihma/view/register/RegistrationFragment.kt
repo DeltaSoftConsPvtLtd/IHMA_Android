@@ -1,5 +1,6 @@
 package com.ilaftalkful.ihma.view.register
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +10,9 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
@@ -28,6 +31,7 @@ import com.ilaftalkful.ihma.utilities.IhmaValidator
 import com.ilaftalkful.ihma.utilities.Utility
 import com.ilaftalkful.ihma.view.SplashActivity
 import com.ilaftalkful.ihma.viewmodel.RegisterViewModel
+import kotlinx.android.synthetic.main.register_fragment.view.*
 import org.checkerframework.checker.units.qual.Length
 
 class RegistrationFragment : IlafBaseFragment() {
@@ -36,6 +40,8 @@ class RegistrationFragment : IlafBaseFragment() {
 
     lateinit var profile_image: ImageView
     lateinit var back_arrow: ImageView
+    lateinit var doctor: TextView
+    lateinit var student: TextView
     private val pickImage = 100
     private var imageUri: Uri? = null
 
@@ -84,8 +90,26 @@ class RegistrationFragment : IlafBaseFragment() {
 
 
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        doctor = view.doctor_id as TextView
+        student = view.student_id as TextView
+
+        doctor.setOnClickListener(View.OnClickListener {
+            doctor.setBackgroundColor(getResources().getColor(R.color.red))
+            student.setBackgroundColor(getResources().getColor(R.color.white))
+
+
+        })
+        student.setOnClickListener(View.OnClickListener {
+            student.setBackgroundColor(getResources().getColor(R.color.red))
+            doctor.setBackgroundColor(getResources().getColor(R.color.white))
+            doctor.setText("Doctor")
+            doctor.setTextColor(getResources().getColor(R.color.colorAccent))
+
+        })
 
         viewModel.userLiveData?.observe(viewLifecycleOwner, Observer {
             when (it.getStatus()) {
@@ -108,8 +132,7 @@ class RegistrationFragment : IlafBaseFragment() {
                 }
                 UserData.UserStatus.USER_REGISTRATION_FAILED -> {
                 IlafCommonAlert(
-                    requireActivity(),
-                    it.statusMessage ?: getString(R.string.registration_failed),
+                    requireActivity(),getString(R.string.registration_failed),
                     getString(R.string.ok),
                     null,
                     object : IlafCommonAlert.IlafDialogListener {
@@ -160,6 +183,8 @@ class RegistrationFragment : IlafBaseFragment() {
         if (Utility.checkInternetConnection(requireActivity())) {
             (activity as IlafBaseActivity).hideKeyboard()
 
+           error.userIdError =
+                IhmaValidator.isValidUserId(viewModel.userId.value!!.trim(), requireActivity())
             error.firstnameError =
                 IhmaValidator.isValidName(viewModel.firstName.value!!.trim(), requireActivity())
             error.lastnameError =
@@ -169,7 +194,7 @@ class RegistrationFragment : IlafBaseFragment() {
             error.userEmailError =
                 IhmaValidator.isValidEmails(viewModel.email.value!!, requireActivity())
             error.registrationNoError =
-                IhmaValidator.isValidEmails(viewModel.email.value!!, requireActivity())
+                IhmaValidator.isValidRegistrationNo(viewModel.email.value!!, requireActivity())
             error.userName =
                 IhmaValidator.isValidUserName(viewModel.username.value!!, requireActivity())
             error.passwordError = IhmaValidator.isValidUserPassword(viewModel.password.value,requireActivity())
@@ -183,7 +208,8 @@ class RegistrationFragment : IlafBaseFragment() {
 
 
 
-            if (IhmaValidator.isNullOrEmpty(error.userNameError)
+            if (IhmaValidator.isNullOrEmpty(error.userIdError)
+                &&IhmaValidator.isNullOrEmpty(error.userNameError)
                 && IhmaValidator.isNullOrEmpty(error.passwordError)
                 && IhmaValidator.isNullOrEmpty(error.phoneNumberError)
                 && IhmaValidator.isNullOrEmpty(error.userEmailError)

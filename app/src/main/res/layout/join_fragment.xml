@@ -8,97 +8,31 @@
             type="com.ilaftalkful.ihma.viewmodel.JoinViewModel" />
     </data>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/colorPrimaryDark"
+        tools:context=".view.bottomNavigation.CoursesFragment">
+        <WebView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/webView"
+            app:loadUrl="@{viewModel.webViewUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="25dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="@string/aboutUs_T1">
-
-            </TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:layout_marginLeft="10dp"
-                android:text="@string/aboutUs_T2">
-
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="15dp"
-                android:textColor="@color/black"
-                android:textStyle="normal"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="@string/aboutUs_T3">
-
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:text="@string/aboutUs_T4">
-
-            </TextView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="15dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
-                android:textStyle="normal"
-                android:text="@string/aboutUs_T5">
-
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:text="@string/aboutUs_T6">
-
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/aboutUs_T7"
-                android:textSize="15dp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
-                android:layout_marginTop="10dp"
-                android:textStyle="normal">
-
-            </TextView>
+        <ProgressBar
+            android:id="@+id/webview_prog_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-
-        </LinearLayout>
-    </ScrollView>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

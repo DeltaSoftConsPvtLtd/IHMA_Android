@@ -2,19 +2,26 @@
 <resources>
     <string-array name="states">
         <item>Kerala</item>
-        <item>Tamil Nadu</item>
-        <item>Karnadaka</item>
-        <item>Andra Pradesh</item>
-        <item>Goa</item>
+
 
     </string-array>
 
     <string-array name="district">
-        <item>Idukki</item>
+        <item>Alappuzha</item>
         <item>Ernakulam</item>
-        <item>Thrissur</item>
+        <item>Idukki</item>
+        <item>Kannur</item>
+        <item>Kasaragod</item>
+        <item>Kollam</item>
         <item>Kottayam</item>
+        <item>Kozhikode</item>
+        <item>Malappuram</item>
         <item>Palakkad</item>
+        <item>Pathanamthitta</item>
+        <item>Thiruvananthapuram</item>
+        <item>Thrissur</item>
+        <item>Wayanad</item>
+
 
     </string-array>
 

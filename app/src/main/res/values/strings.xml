@@ -61,6 +61,8 @@
     <string name="email_empty">Email Id should not be empty</string>
     <string name="username_empty">Username Id should not be empty</string>
     <string name="invalid_email">Not a valid email id</string>
+    <string name="invalid_regNo">Not a valid registration id</string>
+    <string name="invalid_userId">Not a valid userId id</string>
     <string name="space_pasword">Password should not contain space</string>
     <string name="one_numeric">Password should contain at least one numeric value</string>
     <string name="at_least_one_alphabet">Password should contain at least one alphabet</string>

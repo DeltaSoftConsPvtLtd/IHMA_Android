@@ -86,7 +86,7 @@ class UserData {
             val USER_LOGIN_FAILED=1113
             val REGISTRATION_SUCCESS = 1003
             val SESSION_EXPIRED = 99
-            val USER_REGISTRATION_FAILED=102
+            val USER_REGISTRATION_FAILED=1114
 
         }
     }

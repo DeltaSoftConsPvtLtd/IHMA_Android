@@ -119,6 +119,24 @@ class IhmaValidator(context: Context) {
             return errorMSg
         }
 
+        fun isValidRegistrationNo(registrationNo: String,context:Context?): String? {
+            var errorMSg: String? = null
+            if (registrationNo.isEmpty()){
+                errorMSg = context?.getString(R.string.invalid_regNo)
+            }
+
+            return errorMSg
+        }
+
+        fun isValidUserId(userId: String,context:Context?): String? {
+            var errorMSg: String? = null
+            if (userId.isEmpty()){
+                errorMSg = context?.getString(R.string.invalid_userId)
+            }
+
+            return errorMSg
+        }
+
         fun isValidEmails(email: String,context:Context?): String? {
             var errorMSg: String? = null
             if (isNullOrEmpty(email)) {

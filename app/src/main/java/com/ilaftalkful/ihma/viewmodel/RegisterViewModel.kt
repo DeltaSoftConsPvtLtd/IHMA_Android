@@ -26,6 +26,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
 
     var error: UserRegistrationErrors
     internal var userLiveData: UserLiveUpdate? = null
+    val userId = MutableLiveData<String>()
     val firstName = MutableLiveData<String>()
     val lastName = MutableLiveData<String>()
     val registrationNo = MutableLiveData<String>()
@@ -54,9 +55,10 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
        userDetails.membership_fee =1
        userDetails.status = "pending_approval"
        userDetails.user_type = "doctor"
-       userDetails.id_no = 1
        userDetails.blood_group = "A+ve"
 
+
+        userDetails.id_no = Integer.parseInt(userId.value?.trim().toString())
         userDetails.first_name = firstName.value?.trim()
         userDetails.last_name = lastName.value?.trim()
         userDetails.registration_number = registrationNo.value?.trim()
@@ -70,7 +72,8 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         userDetails.password2 = confirmpassword.value?.trim()
 
 
-       if (IhmaValidator.isNullOrEmpty(error.userNameError)
+       if (IhmaValidator.isNullOrEmpty(error.userIdError)
+           && IhmaValidator.isNullOrEmpty(error.userNameError)
            && IhmaValidator.isNullOrEmpty(error.passwordError)
            && IhmaValidator.isNullOrEmpty(error.phoneNumberError)
            && IhmaValidator.isNullOrEmpty(error.userEmailError)

@@ -6,6 +6,17 @@ import com.ilaftalkful.ihma.BR
 
 data class UserRegistrationErrors(var userName : String?) : BaseObservable() {
 
+    var userIdError : String? = null
+        @Bindable
+        get() = field
+        set(value) {
+            if (field != value) {
+                field = value
+                notifyPropertyChanged(BR.userIdError)
+            }
+
+        }
+
     var firstnameError : String? = null
         @Bindable
         get() = field

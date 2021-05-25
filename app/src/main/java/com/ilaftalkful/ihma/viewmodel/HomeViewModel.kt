@@ -1,10 +1,10 @@
 package com.ilaftalkful.ihma.viewmodel
 
 import android.app.Application
-import android.webkit.WebResourceError
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.graphics.Bitmap
+import android.view.View
+import android.webkit.*
+import android.widget.ProgressBar
 import androidx.databinding.Bindable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
@@ -12,49 +12,33 @@ import com.ilaftalkful.ihma.utilities.IlafSharedPreference
 
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
-    val webViewUrl = "http://elearnihma.in/course/index.php"
 
-    //val webViewUrl  = "https://www.google.com/"
-    var isGusetLogin: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
-    var ilafPreference: IlafSharedPreference? = null
+    val webViewUrl = MutableLiveData<String>().apply{ value =  "http://elearnihma.in/course/index.php" }
 
-    init {
-        ilafPreference = IlafSharedPreference(application)
-        isGusetLogin.postValue(ilafPreference?.getBooleanPrefValue(IlafSharedPreference.Constants.IS_GUEST_LOGIN))
-    }
+    fun showWebView(webView: WebView, progressBar: ProgressBar) {
 
+        webView.webViewClient = WebViewClient()
+        webView.webChromeClient = WebChromeClient()
 
-    fun webClient(): WebViewClient? {
-        return Client()
-    }
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                progressBar.visibility = View.VISIBLE
+                super.onPageStarted(view, url, favicon)
+            }
 
+            override fun onPageFinished(view: WebView?, url: String?) {
+                progressBar.visibility = View.GONE
+                super.onPageFinished(view, url)
+            }
 
+            override fun onReceivedError(
+                view: WebView, request: WebResourceRequest,
+                error: WebResourceError
+            ) {
+                super.onReceivedError(view, request, error)
 
-    private class Client : WebViewClient() {
-        override fun onReceivedError(
-            view: WebView, request: WebResourceRequest,
-            error: WebResourceError
-        ) {
-            super.onReceivedError(view, request, error)
-            //setHideProgress(true)
+            }
         }
-
-        override fun onPageFinished(view: WebView, url: String) {
-            super.onPageFinished(view, url)
-            //setHideProgress(true)
-        }
-
-//        @Bindable
-//        fun hideProgress(): Boolean {
-//            return hideProgress()
-//        }
-//
-//        private fun setHideProgress(hideProgress: Boolean) {
-//            this.hideProgress() = hideProgress;
-//            notifyPropertyChanged(BR.hideProgress);
-//
-//        }
-
     }
 }
 

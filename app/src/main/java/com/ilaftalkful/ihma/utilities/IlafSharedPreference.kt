@@ -205,6 +205,7 @@ class IlafSharedPreference {
             val IS_GUEST_LOGIN="guest_login"
             val LANGUAGE_KEY="language"
             val TOKEN_KEY="token"
+            val USER_NAME = "user_name"
         }
     }
 }
