@@ -5,10 +5,10 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.ApplyViewModel" />
+            type="com.deltasoft.ihma.viewmodel.ApplyViewModel" />
         <variable
             name="fragment"
-            type="com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment" />
+            type="com.deltasoft.ihma.view.bottomNavigation.ApplyFragment" />
     </data>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -127,7 +127,8 @@
                 android:layout_marginTop="10dp"
                 android:padding="15dp"
                 android:drawableStart="@drawable/ic_baseline_search_24"
-                android:background="@drawable/accent_button_bg">
+                android:background="@drawable/accent_button_bg"
+                android:drawableLeft="@drawable/ic_baseline_search_24">
 
             </EditText>
 

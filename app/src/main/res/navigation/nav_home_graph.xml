@@ -3,51 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_home_graph.xml"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/join_fragment">
+    app:startDestination="@id/newAboutUsFragment">
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.ilaftalkful.ihma.view.bottomNavigation.CoursesFragment"
+        android:name="com.deltasoft.ihma.view.bottomNavigation.CoursesFragment"
         tools:layout="@layout/courses_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/join_fragment"
-        android:name="com.ilaftalkful.ihma.view.bottomNavigation.AboutUsFragment"
+        android:name="com.deltasoft.ihma.view.bottomNavigation.AboutUsFragment"
         tools:layout="@layout/join_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/apply_fragment"
-        android:name="com.ilaftalkful.ihma.view.bottomNavigation.ApplyFragment"
+        android:name="com.deltasoft.ihma.view.bottomNavigation.ApplyFragment"
         tools:layout="@layout/apply_fragment">
     </fragment>
 
     <fragment
         android:id="@+id/myCoursesFragment"
-        android:name="com.ilaftalkful.ihma.view.drawer.MyCoursesFragment"
+        android:name="com.deltasoft.ihma.view.drawer.MyCoursesFragment"
         android:label="fragment_courses"
         tools:layout="@layout/fragment_my_courses" />
     <fragment
         android:id="@+id/viewProfileFragment"
-        android:name="com.ilaftalkful.ihma.view.drawer.ViewProfileFragment"
+        android:name="com.deltasoft.ihma.view.drawer.ViewProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_view_profile" />
     <fragment
         android:id="@+id/settingsFragment_id"
-        android:name="com.ilaftalkful.ihma.view.home.SettingsFragment"
+        android:name="com.deltasoft.ihma.view.home.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/OTPFragment"
-        android:name="com.ilaftalkful.ihma.view.drawer.OTPFragment"
+        android:name="com.deltasoft.ihma.view.login.OTPFragment"
         android:label="fragment_o_t_p"
         tools:layout="@layout/fragment_o_t_p" />
     <fragment
         android:id="@+id/register_fragment"
-        android:name="com.ilaftalkful.ihma.view.register.RegistrationFragment"
+        android:name="com.deltasoft.ihma.view.register.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/register_fragment" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.deltasoft.ihma.view.login.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.deltasoft.ihma.view.bottomNavigation.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/newAboutUsFragment"
+        android:name="com.deltasoft.ihma.view.drawer.NewAboutUsFragment"
+        android:label="fragment_new_about_us"
+        tools:layout="@layout/fragment_new_about_us" >
+    <action android:id="@+id/action_newaboutUs_fragment_to_chaptersList"
+        app:destination="@id/chapterListFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.deltasoft.ihma.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/officeBearersFragment"
+        android:name="com.deltasoft.ihma.OfficeBearersFragment"
+        android:label="fragment_office_bearers"
+        tools:layout="@layout/fragment_office_bearers" />
+    <fragment
+        android:id="@+id/chapterListFragment"
+        android:name="com.deltasoft.ihma.view.drawer.ChapterListFragment"
+        android:label="fragment_chapter_list"
+        tools:layout="@layout/fragment_chapter_list" />
 
 
 </navigation>

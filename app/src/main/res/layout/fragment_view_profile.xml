@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.ProfileViewModel" />
+            type="com.deltasoft.ihma.viewmodel.ProfileViewModel" />
     </data>
 
     <ScrollView

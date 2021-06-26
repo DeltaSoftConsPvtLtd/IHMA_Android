@@ -2,22 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/nav_graph.xml"
     app:startDestination="@id/splash_fragment">
+    <include app:graph="@navigation/nav_home_graph" />
 
     <fragment
         android:id="@+id/dashboard_fragment"
-        android:name="com.ilaftalkful.ihma.view.bottomNavigation.DashBoardFragment"
+        android:name="com.deltasoft.ihma.view.bottomNavigation.DashBoardFragment"
         android:label="@string/dashboard_fragment_label"
         tools:layout="@layout/dashboard_fragment">
+
         <action
             android:id="@+id/action_dashboard_fragment_to_login_fragment"
-            app:destination="@id/login_fragment" />
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true"/>
+
     </fragment>
+
+
 
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.ilaftalkful.ihma.view.login.LoginFragment"
+        android:name="com.deltasoft.ihma.view.login.LoginFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/login_fragment">
         <action android:id="@+id/action_show_home_guest"
@@ -35,24 +42,23 @@
             app:enterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_left"/>
-        <action
-            android:id="@+id/action_login_fragment_to_resetPasswordFragment"
-            app:destination="@id/resetPasswordFragment" />
-    </fragment>
 
-    <fragment
-        android:id="@+id/splash_fragment"
-        android:name="com.ilaftalkful.ihma.view.splash.SplashFragment"
-        android:label="@string/splash_fragment_label"
-        tools:layout="@layout/splash_fragment">
-        <action android:id="@+id/action_show_home"
-            app:destination="@id/dashboard_fragment"
+        <action android:id="@+id/action_show_login_to_getEmailFragment"
+            app:destination="@id/enterEmailFragment"
             app:exitAnim="@anim/slide_out_left"
             app:enterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_left"
             app:popUpToInclusive="true"
-            app:popUpTo="@id/splash_fragment"/>
+            app:popUpTo="@id/login_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.deltasoft.ihma.view.splash.SplashFragment"
+        android:label="@string/splash_fragment_label"
+        tools:layout="@layout/splash_fragment">
+
 
         <action android:id="@+id/action_show_login"
             app:destination="@id/login_fragment"
@@ -75,7 +81,7 @@
 
     <fragment
         android:id="@+id/register_fragment"
-        android:name="com.ilaftalkful.ihma.view.register.RegistrationFragment"
+        android:name="com.deltasoft.ihma.view.register.RegistrationFragment"
         android:label="@string/register"
         tools:layout="@layout/register_fragment">
 
@@ -90,8 +96,50 @@
 
     </fragment>
     <fragment
-        android:id="@+id/resetPasswordFragment"
-        android:name="com.ilaftalkful.ihma.view.login.ResetPasswordFragment"
-        android:label="fragment_reset_password"
-        tools:layout="@layout/fragment_reset_password" />
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.deltasoft.ihma.view.login.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" >
+
+        <action android:id="@+id/action_forgetPasswordFragment_login"
+            app:destination="@id/login_fragment"
+            app:exitAnim="@anim/slide_out_left"
+            app:enterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/forgetPasswordFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/OTPFragment"
+        android:name="com.deltasoft.ihma.view.login.OTPFragment"
+        android:label="fragment_o_t_p"
+        tools:layout="@layout/fragment_o_t_p">
+
+    <action android:id="@+id/action_otp_forgetPasswordFragment"
+        app:destination="@id/forgetPasswordFragment"
+        app:exitAnim="@anim/slide_out_left"
+        app:enterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popUpToInclusive="true"
+        app:popUpTo="@id/OTPFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/enterEmailFragment"
+        android:name="com.deltasoft.ihma.view.login.EnterEmailFragment"
+        android:label="fragment_enter_email"
+        tools:layout="@layout/fragment_enter_email" >
+    <action android:id="@+id/action_email_otpFragment"
+        app:destination="@id/OTPFragment"
+        app:exitAnim="@anim/slide_out_left"
+        app:enterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_out_right"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popUpToInclusive="true"
+        app:popUpTo="@id/enterEmailFragment"/>
+    </fragment>
+
+
 </navigation>

@@ -1,13 +1,82 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.ilaftalkful.ilaf.view.SplashActivity">
+    tools:context="com.deltasoft.ilaf.view.SplashActivity">
+
+    <item
+        android:id="@+id/join_fragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="ABOUT US" />
+
+    <item
+        android:id="@+id/home_fragment"
+        android:icon="@drawable/ic_baseline_school_24"
+        android:title="COURSES" />
+
+    <item
+        android:id="@+id/viewProfileFragment"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="VIEW PROFILE" />
 
 
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_login_24"
-        android:title="Logout"
+        android:title="LOGOUT" />
 
+    <!-- SET A UNIQUE ID TO THE BELOW GROUP -->
+    <group android:id="@+id/group1">
+
+        <item
+            android:id="@+id/title"
+            android:title="Explore More" />
+
+        <item
+            android:id="@+id/presidents_msg_id"
+            android:title="President's Message" />
+        <item
+            android:id="@+id/faq_id"
+            android:title="FAQ " />
+
+        <item
+            android:id="@+id/general_health_id"
+            android:title="General Health" />
+        <item
+            android:id="@+id/gallery"
+            android:title="Gallery" />
+
+        <item
+            android:id="@+id/soh_id"
+            android:title="SOH" />
+        <item
+            android:id="@+id/ihrc_id"
+            android:title="IHRC" />
+
+<!--        <item-->
+<!--            android:id="@+id/chapterListFragment"-->
+<!--            android:title="ChapterList" />-->
+
+        <item
+            android:id="@+id/contactUsFragment"
+            android:title="Contact Us"
+            />
+
+
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="HOME" />
+    <item
+        android:id="@+id/newAboutUsFragment"
+        android:icon="@drawable/ic_baseline_login_24"
+        android:title="NewAboutUs" />
+
+
+    <item
+        android:id="@+id/officeBearersFragment"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="Office Bearers"
         />
+    </group>
 </menu>

@@ -6,7 +6,7 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.HomeViewModel" />
+            type="com.deltasoft.ihma.viewmodel.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

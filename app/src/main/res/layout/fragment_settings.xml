@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.SettingsViewModel" />
+            type="com.deltasoft.ihma.viewmodel.SettingsViewModel" />
 
 
     </data>

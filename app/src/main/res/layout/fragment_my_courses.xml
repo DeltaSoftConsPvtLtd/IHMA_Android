@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.MyCoursesViewModel" />
+            type="com.deltasoft.ihma.viewmodel.MyCoursesViewModel" />
     </data>
 
     <LinearLayout

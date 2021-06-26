@@ -5,15 +5,15 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.RegisterViewModel" />
+            type="com.deltasoft.ihma.viewmodel.RegisterViewModel" />
 
         <variable
             name="fragment"
-            type="com.ilaftalkful.ihma.view.register.RegistrationFragment" />
+            type="com.deltasoft.ihma.view.register.RegistrationFragment" />
 
         <variable
             name="errors"
-            type="com.ilaftalkful.ihma.model.UserRegistrationErrors" />
+            type="com.deltasoft.ihma.model.UserRegistrationErrors" />
 
     </data>
 
@@ -165,13 +165,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:errorTextColor="@color/colorPrimary"
-                        app:errorIconTint="@color/colorPrimary"
                         app:errorText="@{errors.passwordError}"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorPrimary"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/colorPrimary"
+                        app:errorIconDrawable="@null"
                         android:layout_marginTop="20dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/password_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -187,13 +187,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:errorTextColor="@color/colorPrimary"
-                        app:errorIconTint="@color/colorPrimary"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="@color/colorPrimary"
+                        app:endIconMode="password_toggle"
+                        app:errorIconDrawable="@null"
+                        app:endIconTint="@color/colorPrimary"
                         app:errorText="@{errors.confirmPasswordError}"
                         android:layout_marginTop="20dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/confirm_password_ed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -334,7 +334,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:textSize="30sp"
-                        android:enabled="@{viewModel.isValid}"
+                        android:enabled="@{viewModel.isValid()}"
                         android:alpha="@{errors.uiUpdate ? 0.3f : 1.0f}"
                         android:onClick="@{(v)->fragment.onRegisterClicked(v,errors)}"
                         android:textAllCaps="false" />

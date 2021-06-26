@@ -1,0 +1,10 @@
+package com.deltasoft.ihma.viewmodel
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+
+class SettingsViewModel(application: Application) : AndroidViewModel(application) {
+
+
+
+}

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.SplashViewModel" />
+            type="com.deltasoft.ihma.viewmodel.SplashViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

@@ -5,24 +5,45 @@
         <import type="android.view.View" />
         <variable
             name="viewModel"
-            type="com.ilaftalkful.ihma.viewmodel.OTPViewModel" />
+            type="com.deltasoft.ihma.viewmodel.OTPViewModel" />
         <variable
             name="fragment"
-            type="com.ilaftalkful.ihma.view.drawer.OTPFragmentKt" />
+            type="com.deltasoft.ihma.view.login.OTPFragment" />
     </data>
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".view.drawer.OTPFragment"
+    tools:context=".view.login.OTPFragment"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verification Code"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please Enter the OTP you received on your phone number"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
+        android:text="Please Enter the OTP you received"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center">
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="on your phone number"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_marginStart="30dp"
@@ -36,17 +57,18 @@
         android:background="@drawable/cardview_bg"
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp">
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="OTP"
             android:layout_gravity="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/colorPrimary">
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginStart="20dp">
 
         </TextView>
 
@@ -58,9 +80,11 @@
             android:layout_height="50dp"
             android:inputType="number"
             android:maxLength="1"
+            android:text="@={viewModel.otpE1}"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"/>
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
 
         <EditText
             android:id="@+id/otpET2"
@@ -68,18 +92,22 @@
             android:layout_height="50dp"
             android:inputType="number"
             android:maxLength="1"
+            android:text="@={viewModel.otpE2}"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"/>
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
         <EditText
             android:id="@+id/otpET3"
             android:layout_width="30dp"
             android:layout_height="50dp"
             android:inputType="number"
             android:maxLength="1"
+            android:text="@={viewModel.otpE3}"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"/>
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
 
 
         <EditText
@@ -88,9 +116,34 @@
             android:layout_height="50dp"
             android:inputType="number"
             android:maxLength="1"
+            android:text="@={viewModel.otpE4}"
             android:gravity="center"
-            android:layout_marginStart="20dp"
-            android:textSize="20sp"/>
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
+        <EditText
+            android:id="@+id/otpET5"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="@={viewModel.otpE5}"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
+        <EditText
+            android:id="@+id/otpET6"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="@={viewModel.otpE6}"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            />
     </LinearLayout>
 
     <TextView
@@ -98,14 +151,16 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:padding="3dp"
         android:text="VERIFY"
         android:background="@drawable/lightblue_button_bg"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:onClick="@{(v)->fragment.onOTPverified(v)}"
         android:textAllCaps="false" />
 
 </LinearLayout>
