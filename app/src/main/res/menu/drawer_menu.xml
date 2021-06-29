@@ -4,9 +4,9 @@
     tools:context="com.deltasoft.ilaf.view.SplashActivity">
 
     <item
-        android:id="@+id/join_fragment"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="ABOUT US" />
+        android:title="HOME" />
 
     <item
         android:id="@+id/home_fragment"
@@ -52,31 +52,9 @@
             android:id="@+id/ihrc_id"
             android:title="IHRC" />
 
-<!--        <item-->
-<!--            android:id="@+id/chapterListFragment"-->
-<!--            android:title="ChapterList" />-->
-
         <item
             android:id="@+id/contactUsFragment"
-            android:title="Contact Us"
-            />
+            android:title="Contact Us" />
 
-
-
-    <item
-        android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_baseline_login_24"
-        android:title="HOME" />
-    <item
-        android:id="@+id/newAboutUsFragment"
-        android:icon="@drawable/ic_baseline_login_24"
-        android:title="NewAboutUs" />
-
-
-    <item
-        android:id="@+id/officeBearersFragment"
-        android:icon="@drawable/ic_baseline_perm_identity_24"
-        android:title="Office Bearers"
-        />
     </group>
 </menu>

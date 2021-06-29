@@ -3,6 +3,7 @@ package com.deltasoft.ihma.retrofit
 import android.app.Application
 import com.deltasoft.ihma.model.loginmodel.UserLoginResponse
 import com.deltasoft.ihma.model.otpModel.UserOTPResponse
+import com.deltasoft.ihma.model.registerModel.BaseResponseStatus
 import com.deltasoft.ihma.model.registerModel.RegisterUserDetails
 import io.reactivex.Observable
 import retrofit2.Response

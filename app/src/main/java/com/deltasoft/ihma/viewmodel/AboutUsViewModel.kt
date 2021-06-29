@@ -8,15 +8,12 @@ import com.deltasoft.ihma.model.HomeModel
 
 class AboutUsViewModel(application: Application) : AndroidViewModel(application) {
 
-    var lst = MutableLiveData<ArrayList<HomeModel>>()
-    var newlist = arrayListOf<HomeModel>()
-
-    fun add(blog: HomeModel){
-        newlist.add(blog)
-        newlist.add(blog)
-        newlist.add(blog)
-        newlist.add(blog)
-        lst.value=newlist
-    }
+//    var lst = MutableLiveData<ArrayList<HomeModel>>()
+//    var newlist = arrayListOf<HomeModel>()
+//
+//    fun add(blog: HomeModel){
+//        newlist.add(blog)
+//        lst.value=newlist
+//    }
 
 }

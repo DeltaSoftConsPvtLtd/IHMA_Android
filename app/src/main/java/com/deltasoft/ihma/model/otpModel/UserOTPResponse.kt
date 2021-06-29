@@ -7,7 +7,7 @@ import java.io.Serializable
 open class UserOTPResponse() : Serializable {
 
     @SerializedName("data")
-    var `data`: List<Data>? = null
+    var data: List<Data>? = null
         get() = field
         set(value) {
             field = value
@@ -20,12 +20,7 @@ open class UserOTPResponse() : Serializable {
             field = value
         }
 
-    @SerializedName("details")
-    var details: Details? = null
-        get() = field
-        set(value) {
-            field = value
-        }
+
 
 }
 

@@ -13,11 +13,14 @@ import com.deltasoft.ihma.utilities.IlafSharedPreference
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
+
 class EnterEmailViewModel(application: Application) : AndroidViewModel(application) {
 
     val email = MutableLiveData<String>()
     internal var userLiveData: UserLiveUpdate? = null
     var pref: IlafSharedPreference
+   // var data: MutableLiveData<UserOTPResponse> = MutableLiveData<UserOTPResponse>()
+    val otpResponse = MutableLiveData<UserOTPResponse>()
 
 
 
@@ -39,9 +42,15 @@ class EnterEmailViewModel(application: Application) : AndroidViewModel(applicati
                 ?.subscribe({
                     if (it.isSuccessful) {
                         if (it.code() == 200) {
-                            userLiveData?.userOTPSuccess()
-                            IlafSharedPreference(getApplication()).setStringPrefValue(IlafSharedPreference.Constants.EMAIL_ID, emailId)
-                            processOnResponse(it.body())
+
+                                userLiveData?.userOTPSuccess()
+                                IlafSharedPreference(getApplication()).setStringPrefValue(
+                                    IlafSharedPreference.Constants.EMAIL_ID,
+                                    emailId
+                                )
+                                otpResponse.postValue(it.body())
+                                processOnResponse(it.body())
+
 
                         } else {
                             userLiveData?.userOTPFailed()
@@ -65,10 +74,12 @@ class EnterEmailViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     private fun processOnResponse(body: UserOTPResponse?) {
-        pref.setStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY, body?.details?.token)
-        Log.d("Token",body?.details?.token.toString())
+        pref.setStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY, body?.data?.details.token)
+        //Log.d("Token",body?.details?.token.toString())
 
 
     }
 
 }
+
+

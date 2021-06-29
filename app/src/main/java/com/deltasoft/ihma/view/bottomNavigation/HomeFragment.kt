@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.deltasoft.ihma.R
 import com.deltasoft.ihma.bindingAdaptor.HomeCollaborationsAdapter
-import com.deltasoft.ihma.bindingAdaptor.HomeResearchAdapter
 import com.deltasoft.ihma.databinding.FragmentHomeBinding
 import com.deltasoft.ihma.model.HomeModel
 import com.deltasoft.ihma.viewmodel.NewHomeViewModel
@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
     val viewModel: NewHomeViewModel by viewModels()
     var adapter_collaboration: HomeCollaborationsAdapter? = null
-    var adapter_research: HomeResearchAdapter? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         )
         homeFragmentBinding.lifecycleOwner = this
         homeFragmentBinding.viewModel = viewModel
-
+        homeFragmentBinding.fragment=this
         //Collaboration recyclerview
         adapter_collaboration = HomeCollaborationsAdapter(viewModel, this)
         homeFragmentBinding.collaborationRecyclerView.adapter=adapter_collaboration
@@ -49,16 +49,6 @@ class HomeFragment : Fragment() {
         )
         addData()
         observeData()
-
-        //Research recyclerview
-        adapter_research = HomeResearchAdapter(viewModel, this)
-        homeFragmentBinding.researchRecyclerview.adapter=adapter_research
-        homeFragmentBinding.researchRecyclerview.setLayoutManager(
-            GridLayoutManager(activity,3)
-        )
-        addDataResearch()
-        observeData()
-
         return homeFragmentBinding.root
     }
 
@@ -69,10 +59,7 @@ class HomeFragment : Fragment() {
             adapter_collaboration?.setData(it)
         })
 
-        viewModel.researchLst.observe(viewLifecycleOwner, androidx.lifecycle.Observer{
-            Log.i("data",it.toString())
-            adapter_research?.setData(it)
-        })
+
     }
 
     private fun addData() {
@@ -81,20 +68,35 @@ class HomeFragment : Fragment() {
             viewModel.add(blog)
         }
 
-    private fun addDataResearch() {
+    fun onAboutIHMAClicked(view: View) {
 
-        val blog1= HomeModel(R.drawable.publication_icon,"About IHMA")
-        viewModel.addResearch(blog1)
-        val blog2= HomeModel(R.drawable.training_icon,"Homeopathy")
-        viewModel.addResearch(blog2)
-        val blog3= HomeModel(R.drawable.conferene_icon,"Flash News")
-        viewModel.addResearch(blog3)
-        val blog4= HomeModel(R.drawable.events_icon,"Events")
-        viewModel.addResearch(blog4)
-        val blog5= HomeModel(R.drawable.conferene_icon,"Articles")
-        viewModel.addResearch(blog5)
-        val blog6= HomeModel(R.drawable.events_icon,"Institutions")
-        viewModel.addResearch(blog6)
+        findNavController().navigate(R.id.action_home_fragment_to_aboutIhma)
+
+    }
+    fun onHomeopathyClicked(view: View) {
+
+       // findNavController().navigate(R.id.action_newaboutUs_fragment_to_firstDoctor)
+
+    }
+    fun onFlashNewsClicked(view: View) {
+
+        findNavController().navigate(R.id.action_home_fragment_to_flashnews)
+
+    }
+    fun onEventsClicked(view: View) {
+
+        findNavController().navigate(R.id.action_home_fragment_to_events)
+
+    }
+    fun onArticlesClicked(view: View) {
+
+       // findNavController().navigate(R.id.action_newaboutUs_fragment_to_fourthDoctor)
+
+    }
+    fun onInstitutionClicked(view: View) {
+
+       // findNavController().navigate(R.id.action_newaboutUs_fragment_to_fourthDoctor)
+
     }
 
     }

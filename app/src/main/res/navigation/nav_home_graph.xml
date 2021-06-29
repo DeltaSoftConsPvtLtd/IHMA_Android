@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_home_graph.xml"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/newAboutUsFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/home_fragment"
@@ -53,19 +53,36 @@
         android:name="com.deltasoft.ihma.view.login.ForgetPasswordFragment"
         android:label="fragment_forget_password"
         tools:layout="@layout/fragment_forget_password" />
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.deltasoft.ihma.view.bottomNavigation.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action android:id="@+id/action_home_fragment_to_aboutIhma"
+        app:destination="@id/newAboutUsFragment" />
+        <action android:id="@+id/action_home_fragment_to_events"
+            app:destination="@id/eventsFragment" />
+        <action android:id="@+id/action_home_fragment_to_flashnews"
+            app:destination="@id/flashNewsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/newAboutUsFragment"
         android:name="com.deltasoft.ihma.view.drawer.NewAboutUsFragment"
         android:label="fragment_new_about_us"
         tools:layout="@layout/fragment_new_about_us" >
-    <action android:id="@+id/action_newaboutUs_fragment_to_chaptersList"
+        <action android:id="@+id/action_newaboutUs_fragment_to_chaptersList"
         app:destination="@id/chapterListFragment" />
+
+        <action android:id="@+id/action_newaboutUs_fragment_to_firstDoctor"
+            app:destination="@id/firstDoctorFragment" />
+        <action android:id="@+id/action_newaboutUs_fragment_to_secondDoctor"
+            app:destination="@id/secondDoctorFragment" />
+        <action android:id="@+id/action_newaboutUs_fragment_to_thirdDoctor"
+            app:destination="@id/thirdDoctorFragment" />
+        <action android:id="@+id/action_newaboutUs_fragment_to_fourthDoctor"
+            app:destination="@id/fourthDoctorFragment" />
 
     </fragment>
     <fragment
@@ -73,16 +90,42 @@
         android:name="com.deltasoft.ihma.ContactUsFragment"
         android:label="fragment_contact_us"
         tools:layout="@layout/fragment_contact_us" />
-    <fragment
-        android:id="@+id/officeBearersFragment"
-        android:name="com.deltasoft.ihma.OfficeBearersFragment"
-        android:label="fragment_office_bearers"
-        tools:layout="@layout/fragment_office_bearers" />
+
     <fragment
         android:id="@+id/chapterListFragment"
         android:name="com.deltasoft.ihma.view.drawer.ChapterListFragment"
         android:label="fragment_chapter_list"
         tools:layout="@layout/fragment_chapter_list" />
+    <fragment
+        android:id="@+id/firstDoctorFragment"
+        android:name="com.deltasoft.ihma.FirstDoctorFragment"
+        android:label="fragment_first_doctor"
+        tools:layout="@layout/fragment_first_doctor" />
+    <fragment
+        android:id="@+id/secondDoctorFragment"
+        android:name="com.deltasoft.ihma.SecondDoctorFragment"
+        android:label="fragment_second_doctor"
+        tools:layout="@layout/fragment_second_doctor" />
+    <fragment
+        android:id="@+id/thirdDoctorFragment"
+        android:name="com.deltasoft.ihma.ThirdDoctorFragment"
+        android:label="fragment_third_doctor"
+        tools:layout="@layout/fragment_third_doctor" />
+    <fragment
+        android:id="@+id/fourthDoctorFragment"
+        android:name="com.deltasoft.ihma.FourthDoctorFragment"
+        android:label="fragment_fourth_doctor"
+        tools:layout="@layout/fragment_fourth_doctor" />
+    <fragment
+        android:id="@+id/flashNewsFragment"
+        android:name="com.deltasoft.ihma.FlashNewsFragment"
+        android:label="fragment_flash_news"
+        tools:layout="@layout/fragment_flash_news" />
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.deltasoft.ihma.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
 
 
 </navigation>
