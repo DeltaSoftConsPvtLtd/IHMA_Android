@@ -1,6 +1,7 @@
 package com.deltasoft.ihma.bindingAdaptor
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.View
 import android.webkit.WebSettings
 import android.webkit.WebView
@@ -8,6 +9,7 @@ import android.webkit.WebViewClient
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.annotation.RequiresApi
 
 import androidx.appcompat.widget.AppCompatSpinner
 import androidx.databinding.BindingAdapter
@@ -20,6 +22,7 @@ fun setWebViewClient(view: WebView, client: WebViewClient) {
     view.webViewClient = client
 }
 
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 @SuppressLint("SetJavaScriptEnabled")
 @BindingAdapter("loadUrl")
 fun loadUrl(view: WebView, url: String) {

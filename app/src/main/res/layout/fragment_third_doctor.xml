@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable
-            name="viewModel"
-            type="com.deltasoft.ihma.viewmodel.NewHomeViewModel" />
+
         <variable
             name="fragment"
-            type="com.deltasoft.ihma.view.bottomNavigation.HomeFragment" />
+            type="com.deltasoft.ihma.view.aboutUs.ThirdDoctorFragment" />
 
     </data>
 
@@ -16,7 +14,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ContactUsFragment">
+        tools:context=".ThirdDoctorFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -50,7 +48,7 @@
                         android:id="@+id/profile_image"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:src="@drawable/c"
+                        android:src="@drawable/doctorc"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@color/white"/>
 
@@ -68,7 +66,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -116,7 +114,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="1/4741, Eranjipalam P.O., Kozhikode - 673 006, Kerala"
+                            android:text="Pookkottil House,Nallalam P.O,Kozhikode 673027"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp"
                             android:textStyle="normal" />
@@ -139,7 +137,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text=" (+91) 944 412 6169"
+                            android:text=" (+91) 8089930450"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp"
                             android:textStyle="normal" />
@@ -160,7 +158,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text=" info@ihma.in"
+                            android:text="jibil.p@gmail.com"
                             android:textColor="@color/colorPrimary"
                             android:textSize="15sp"
                             android:textStyle="normal" />

@@ -14,6 +14,8 @@ class ErrorData {
     }
 
     fun getErrorMessage(): String {
-        return errorMessage?:"Unknown Error"
+        //return errorMessage?:"Unknown Error"
+        return errorMessage.toString()
+
     }
 }

@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deltasoft.ihma.R
 import com.deltasoft.ihma.model.CoursesModel
-import com.deltasoft.ihma.view.bottomNavigation.ApplyFragment
-import com.deltasoft.ihma.viewmodel.ApplyViewModel
+import com.deltasoft.ihma.view.drawer.PaymentFragment
+import com.deltasoft.ihma.viewmodel.PaymentViewModel
 import kotlinx.android.synthetic.main.single_course_layout.view.*
 
-class CourseAdapter(val viewModel: ApplyViewModel,  val context: ApplyFragment): RecyclerView.Adapter<CourseAdapter.CoursesViewHolder>() {
+class CourseAdapter(val viewModel: PaymentViewModel, val context: PaymentFragment): RecyclerView.Adapter<CourseAdapter.CoursesViewHolder>() {
     var arrayList: ArrayList<CoursesModel>? = null
 
     fun setData(list: ArrayList<CoursesModel>)

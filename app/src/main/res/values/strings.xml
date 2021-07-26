@@ -71,9 +71,19 @@
     <string name="password_no_empty">Password  should not be Empty </string>
     <string name="something_went_wrong">Something went wrong</string>
     <string name="login_failed">Login Failed</string>
+    <string name="no_events">Events has no new Updates</string>
+    <string name="no_flashnews">Flash News has no new Updates</string>
+    <string name="no_notifications">Notifications has no new Updates</string>
+    <string name="failed_events">Viewing Events Failed</string>
+    <string name="failed_flashnews">Viewing Flash News Failed </string>
+    <string name="failed_notifications">Viewing Notifications Failed </string>
     <string name="otp_sending_failed">OTP Sending Failed</string>
     <string name="otp_failed">Please ReEnter OTP</string>
+    <string name="new_password">New Password</string>
+    <string name="new_password2">New Password is</string>
+    <string name="new_password3">Please use it for login</string>
     <string name="registration_failed">Registration Failed</string>
+    <string name="registration_failed_error">Please Re_enter another Registration No./Username.</string>
     <string name="ok">OK</string>
     <string name="no_interbnet">You are Offline, Try again later !!</string>
     <string name="name_empty">Name Cannot be empty</string>
@@ -82,7 +92,7 @@
     <string name="registration_success">Successfully Registered</string>
     <string name="aboutUs_T1">ABOUT IHMA</string>
     <string name="aboutUs_T2">REGISTER NUMBER: 64/04</string>
-    <string name="aboutUs_T3">The National Platform of Indian Homoeopaths is relentless in its efforts to raise the standards of Homoeopathic Education and Practice in India.</string>
+    <string name="aboutUs_T3">IHMA - The National Platform of Indian Homoeopaths is relentless in its efforts to raise the standards of Homoeopathic Education and Practice in India.</string>
     \n\n
     <string name="aboutUs_T3_extra">IHMA serve the human society by awarding the benefits of homoeopathic system of treatment to public, especially the low socio-economic groups by conducting regular medical camps and fight to maintain the honor and dignity of the profession. Conducts regular CMEs, leadership training programmes, faculty and clinical training , PSC, UPSC and PG Entrance coaching, conferences, newsletters and magazines along with integrated medical research.\n\n
         It has fought tooth and nail many absurd decisions of the authorities concerned and this way gained maximum acceptance among the homoeopathic community which is evident from the growth it achieved along the length and breadth of India.</string>
@@ -92,4 +102,32 @@
     <string name="aboutUs_T6">HISTORY OF IHMA</string>
     <string name="aboutUs_T7">It has fought tooth and nail many absurd decisions of the authorities concerned and this way gained maximum acceptance among the homeopathic community which is evident from the growth.</string>
     <string name="chapters_in_kerala">To see more details..</string>
+    <string name="gallery">IHMA GALLERY</string>
+
+    <string name="ob_1">- To serve the human society by awarding the benefits of Homoeopathic System of treatment to public, especially the low socio-economic groups.</string>
+    <string name="ob_2">- To improve the quality of Homoeopathic Medical Practice.</string>
+    <string name="ob_3">- To improve the quality of Homoeopathic Medical Education.</string>
+    <string name="ob_4">- To maintain the honour and dignity and to uphold the interest of the profession of Homoeopathic Practice and to promote cooperation amongst the members thereof.</string>
+    <string name="ob_5">- To work for the abolition of fake Homoeopathic Practices.</string>
+    <string name="ob_6">- To achieve welfare of qualified Homoeopathic Doctors.</string>
+    <string name="ob_7">- To stand for integrated medical research in Homoeopathy.</string>
+    <string name="ob_8">- To conduction medical camps, especially in epidemics affected areas.</string>
+    <string name="ob_9">- To promote and advance Homoeopathic System of Medicine and allied sciences and to benefit and improve public health thereby.</string>
+
+    <string name="policy1"><u>Terms and Conditions and Cancellation and Refund policy</u></string>
+    <string name="policy2">The fees collected through this mobile application is for obtaining membership to IHMA, (Indian Homeopathic Medical Association), Kerala Chapter, subject to the membership policies and regulations of the IHMA.</string>
+    <string name="policy3">There are 2 types of membership, as shown below:</string>
+    <string name="policy4"> •	Annual and Lifetime</string>
+    <string name="policy5"> •	Annual membership fee is Rs 400 and Lifetime fee is Rs 4000.</string>
+    <string name="policy6">NB: Membership once awarded cannot be cancelled, and no refund is given for approved members as there is no cancellation of life membership.</string>
+    <string name="policy7"><u>Refund terms:</u></string>
+    <string name="policy8">Once the Admin verifies the membership application submitted, then the membership is granted, however if the application is rejected by the association, due to reasons whatsoever, the membership will not be awarded, and fee would be refunded to the applicantbank account within 21 working days.</string>
+    <string name="policy9">Amount once paid through the payment gateway shall not be refunded other than in any of the following circumstances mentioned below:</string>
+    <string name="policy10">a.	  Multiple times debiting of applicant’s Card/Bank Account due to technical error.</string>
+    <string name="policy11">b.	Applicant’s account being debited with excess amount in a single transaction due to technical error. </string>
+    <string name="policy12">2.	In such cases, excess amount excluding Payment Gateway charges would be refunded to the applicant.</string>
+    <string name="policy13">3.	If payment being charged on the Customer’s Card/Bank Account but the Membership got rejected due to any reason, the fee would be refunded.</string>
+    <string name="policy14">a.	The applicant will have to make an application(email) for refund along with the transaction number and original payment receipt if any generated at the time of making payments.</string>
+    <string name="policy15">4.	Any grievance is payment can be notified with transaction date, amount, and reference number to the email secretary@ihmakerala.in.</string>
+
 </resources>

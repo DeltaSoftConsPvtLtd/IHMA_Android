@@ -1,32 +1,19 @@
 package com.deltasoft.ihma.view.login
 
-import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.deltasoft.ihma.R
-import com.deltasoft.ihma.base.IlafBaseActivity
 import com.deltasoft.ihma.base.IlafBaseFragment
 import com.deltasoft.ihma.customcomponents.IlafCommonAlert
 import com.deltasoft.ihma.databinding.FragmentEnterEmailBinding
-import com.deltasoft.ihma.databinding.LoginFragmentBinding
-import com.deltasoft.ihma.model.SignInErrors
 import com.deltasoft.ihma.model.UserData
-import com.deltasoft.ihma.utilities.IlafSharedPreference
-import com.deltasoft.ihma.utilities.Utility
-import com.deltasoft.ihma.view.LoginViewModel
-import com.deltasoft.ihma.view.SplashActivity
+import com.deltasoft.ihma.view.splash.SplashActivity
 import com.deltasoft.ihma.viewmodel.EnterEmailViewModel
-import kotlinx.android.synthetic.main.login_fragment.view.*
-import java.util.Observer
 
 
 class EnterEmailFragment : IlafBaseFragment() {

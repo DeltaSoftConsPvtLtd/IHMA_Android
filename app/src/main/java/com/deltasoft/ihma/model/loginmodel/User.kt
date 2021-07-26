@@ -8,8 +8,7 @@ data  class User(val anme: String? = null) : BaseObservable() {
     @SerializedName("username")
     var username: String? = null
 
-    @SerializedName("user")
-    var user: User? = null
+
 
 }
 

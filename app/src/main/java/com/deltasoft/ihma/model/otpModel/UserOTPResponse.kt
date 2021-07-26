@@ -1,6 +1,5 @@
 package com.deltasoft.ihma.model.otpModel
 
-import androidx.databinding.BaseObservable
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

@@ -22,5 +22,14 @@ data  class Data(val anme: String? = null) : BaseObservable() {
     @SerializedName("user")
     var user: User? = null
 
+    @SerializedName("email")
+    var email: Email? = null
+
+    @SerializedName("phone")
+    var phone: Phone? = null
+
+    @SerializedName("join_date")
+    var join_date: JoinDate? = null
+
 }
 

@@ -204,10 +204,14 @@ class IlafSharedPreference {
         companion object {
             val IS_GUEST_LOGIN="guest_login"
             val PASSWORD="password"
+            val NEW_PASSWORD="new_password"
             val TOKEN_KEY="token"
             val USER_NAME = "user_name"
             val IS_LOGEDIN_USER="loged_in_user"
             val EMAIL_ID="emailId"
+            val PHONE="phone"
+            val JOINING_DATE="joining_date"
+            val SESSION_TOKEN="session_token"
         }
     }
 }

@@ -14,7 +14,20 @@ class Utility {
                 networkInfo?.isConnected ?: false
             } else return false
         }
+
+
+
+        fun loadJSONFromAsserts(ctx: Context?,fileName: String): String? {
+            return ctx?.assets?.open(fileName)?.bufferedReader().use { reader ->
+                reader?.readText()
+            }
+        }
+
+
     }
-}
+    }
+
+
+
 
 

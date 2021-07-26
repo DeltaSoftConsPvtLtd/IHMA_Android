@@ -1,10 +1,8 @@
 package com.deltasoft.ihma.model.otpModel
 
-import androidx.databinding.BaseObservable
 import com.google.gson.annotations.SerializedName
 
-open class Data(val anme: String? = null)  {
-
+data class Data(val anme: String? = null)  {
 
     @SerializedName("status")
     var status: String? = null
@@ -14,11 +12,6 @@ open class Data(val anme: String? = null)  {
 
     @SerializedName("details")
     var details: Details? = null
-
-
-
-
-
 
 }
 

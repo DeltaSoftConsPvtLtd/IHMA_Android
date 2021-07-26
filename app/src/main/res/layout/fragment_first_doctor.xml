@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable
-            name="viewModel"
-            type="com.deltasoft.ihma.viewmodel.NewHomeViewModel" />
+
         <variable
             name="fragment"
-            type="com.deltasoft.ihma.view.bottomNavigation.HomeFragment" />
+            type="com.deltasoft.ihma.view.aboutUs.FirstDoctorFragment"/>
 
     </data>
 
@@ -16,7 +14,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ContactUsFragment">
+        tools:context=".FirstDoctorFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -50,7 +48,7 @@
                         android:id="@+id/profile_image"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
-                        android:src="@drawable/d"
+                        android:src="@drawable/doctora"
                         app:civ_border_width="2dp"
                         app:civ_border_color="@color/white"/>
 
@@ -68,7 +66,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:gravity="center"
                     android:orientation="vertical">

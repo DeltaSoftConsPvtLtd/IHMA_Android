@@ -58,4 +58,29 @@ class UserLiveUpdate : MutableLiveData<UserData>() {
         postValue(mData.OTPVerificationFailed())
     }
 
+    fun EmptyEvents() {
+        postValue(mData.EmptyEvents())
+    }
+
+    fun ViewingEventsFailed() {
+        postValue(mData.ViewingEventsFailed())
+    }
+
+    fun EmptyFlashNews() {
+        postValue(mData.EmptyFlashNews())
+    }
+
+    fun ViewingFlashNewsFailed() {
+        postValue(mData.ViewingFlashNewsFailed())
+    }
+
+    fun EmptyNotification() {
+        postValue(mData.EmptyNotification())
+    }
+
+    fun ViewingNotificationFailed() {
+        postValue(mData.ViewingNotificationFailed())
+    }
+
+
 }

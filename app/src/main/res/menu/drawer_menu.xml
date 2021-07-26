@@ -6,55 +6,40 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="HOME" />
+        android:title="Home" />
+    <item
+        android:id="@+id/newAboutUsFragment"
+        android:icon="@drawable/ic_health"
+        android:title="About Us" />
 
     <item
-        android:id="@+id/home_fragment"
+        android:id="@+id/courses_fragment"
         android:icon="@drawable/ic_baseline_school_24"
-        android:title="COURSES" />
+        android:title="Courses" />
 
     <item
         android:id="@+id/viewProfileFragment"
         android:icon="@drawable/ic_baseline_perm_identity_24"
-        android:title="VIEW PROFILE" />
+        android:title="View Profile" />
 
+    <item
+            android:id="@+id/galleryFragment_id"
+            android:icon="@drawable/ic_baseline_photo_album_24"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/payment_fragment"
+            android:icon="@drawable/ic_baseline_payment_24"
+            android:title="Payment" />
+
+        <item
+            android:id="@+id/contactUsFragment"
+            android:icon="@drawable/ic_nav_contact_inactive"
+            android:title="Contact Us" />
 
     <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_login_24"
-        android:title="LOGOUT" />
+        android:title="Logout" />
 
-    <!-- SET A UNIQUE ID TO THE BELOW GROUP -->
-    <group android:id="@+id/group1">
 
-        <item
-            android:id="@+id/title"
-            android:title="Explore More" />
-
-        <item
-            android:id="@+id/presidents_msg_id"
-            android:title="President's Message" />
-        <item
-            android:id="@+id/faq_id"
-            android:title="FAQ " />
-
-        <item
-            android:id="@+id/general_health_id"
-            android:title="General Health" />
-        <item
-            android:id="@+id/gallery"
-            android:title="Gallery" />
-
-        <item
-            android:id="@+id/soh_id"
-            android:title="SOH" />
-        <item
-            android:id="@+id/ihrc_id"
-            android:title="IHRC" />
-
-        <item
-            android:id="@+id/contactUsFragment"
-            android:title="Contact Us" />
-
-    </group>
 </menu>

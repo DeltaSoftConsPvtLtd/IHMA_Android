@@ -1,13 +1,12 @@
 package com.deltasoft.ihma.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.deltasoft.ihma.model.ErrorData
 import com.deltasoft.ihma.model.UserLiveUpdate
-import com.deltasoft.ihma.model.loginmodel.Data
 import com.deltasoft.ihma.model.otpModel.Details
-import com.deltasoft.ihma.model.otpModel.UserOTPResponse
 import com.deltasoft.ihma.retrofit.UserService
 import com.deltasoft.ihma.utilities.IlafSharedPreference
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -61,6 +60,10 @@ class OTPViewModel(application: Application) : AndroidViewModel(application) {
                     if (it.isSuccessful) {
                         if (it.code() == 200) {
                             userLiveData?.userOTPVerificationSuccess()
+                                IlafSharedPreference(getApplication()).setStringPrefValue(
+                                IlafSharedPreference.Constants.NEW_PASSWORD,
+                                it.body()?.data?.get(0)?.details?.newPassword)
+                            Log.d("NewPassword", it.body()?.data?.get(0)?.details?.newPassword.toString())
                         } else {
                             userLiveData?.userOTPVerificationFailed()
                         }

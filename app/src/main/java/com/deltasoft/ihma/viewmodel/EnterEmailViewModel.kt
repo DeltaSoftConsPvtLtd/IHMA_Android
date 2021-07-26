@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.deltasoft.ihma.model.ErrorData
-import com.deltasoft.ihma.model.SignInErrors
 import com.deltasoft.ihma.model.UserLiveUpdate
 import com.deltasoft.ihma.model.otpModel.UserOTPResponse
 import com.deltasoft.ihma.retrofit.UserService
@@ -19,7 +18,6 @@ class EnterEmailViewModel(application: Application) : AndroidViewModel(applicati
     val email = MutableLiveData<String>()
     internal var userLiveData: UserLiveUpdate? = null
     var pref: IlafSharedPreference
-   // var data: MutableLiveData<UserOTPResponse> = MutableLiveData<UserOTPResponse>()
     val otpResponse = MutableLiveData<UserOTPResponse>()
 
 
@@ -74,8 +72,9 @@ class EnterEmailViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     private fun processOnResponse(body: UserOTPResponse?) {
-        pref.setStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY, body?.data?.details.token)
-        //Log.d("Token",body?.details?.token.toString())
+        val token = body?.data?.get(0)?.details?.token
+        pref.setStringPrefValue(IlafSharedPreference.Constants.TOKEN_KEY, token)
+        Log.d("Token",token.toString())
 
 
     }

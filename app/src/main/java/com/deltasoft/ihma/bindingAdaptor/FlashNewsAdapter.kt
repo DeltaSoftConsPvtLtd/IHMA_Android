@@ -4,21 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.deltasoft.ihma.FlashNewsFragment
+import com.deltasoft.ihma.view.home.FlashNewsFragment
 import com.deltasoft.ihma.R
-import com.deltasoft.ihma.model.HomeModel
-import com.deltasoft.ihma.view.bottomNavigation.HomeFragment
+import com.deltasoft.ihma.model.alertModel.AlertModel
 import com.deltasoft.ihma.viewmodel.FlasNewsViewModel
-import com.deltasoft.ihma.viewmodel.NewHomeViewModel
-import kotlinx.android.synthetic.main.single_home_events.view.*
 import kotlinx.android.synthetic.main.single_home_flashnews.view.*
 
 
 class FlashNewsAdapter(val viewModel: FlasNewsViewModel, val context: FlashNewsFragment): RecyclerView.Adapter<FlashNewsAdapter.FlashNewsViewHolder>() {
-    var arrayList: ArrayList<HomeModel>? = null
+    var arrayList: ArrayList<AlertModel>? = null
 
-    fun setData(list: ArrayList<HomeModel
-            >)
+    fun setData(list: ArrayList<AlertModel>)
     {
         arrayList = list
         notifyDataSetChanged()
@@ -46,9 +42,9 @@ class FlashNewsAdapter(val viewModel: FlasNewsViewModel, val context: FlashNewsF
 
 
     inner  class FlashNewsViewHolder(private val binding: View) : RecyclerView.ViewHolder(binding) {
-        fun bind(research: HomeModel){
+        fun bind(flashnews: AlertModel){
 
-            binding.flashnews_text_id.text = research.description
+            binding.flashnews_text_id.text = flashnews.name
 
         }
 

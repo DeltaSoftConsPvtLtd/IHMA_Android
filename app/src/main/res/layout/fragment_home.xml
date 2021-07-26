@@ -8,14 +8,14 @@
             type="com.deltasoft.ihma.viewmodel.NewHomeViewModel" />
         <variable
             name="fragment"
-            type="com.deltasoft.ihma.view.bottomNavigation.HomeFragment" />
+            type="com.deltasoft.ihma.view.home.HomeFragment" />
 
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".view.bottomNavigation.HomeFragment">
+    tools:context=".view.home.HomeFragment">
 
 
     <ImageView
@@ -407,7 +407,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
-            android:onClick="@{(v)->fragment.onInstitutionClicked(v)}"
+            android:onClick="@{(v)->fragment.onNotificationClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
             <LinearLayout
@@ -434,7 +434,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/institution_icon">
+                            android:src="@drawable/ic_baseline_notifications_none_24">
 
                         </ImageView>
 
@@ -448,7 +448,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="Institutions"
+                    android:text="Notifications"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     android:textStyle="bold">

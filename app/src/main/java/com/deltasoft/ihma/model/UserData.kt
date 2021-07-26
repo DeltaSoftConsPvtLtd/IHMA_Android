@@ -102,6 +102,40 @@ class UserData {
 
     }
 
+    fun EmptyEvents(): UserData? {
+        this.status = UserStatus.EMPTY_EVENTS
+        this.error = null
+        return this
+    }
+
+    fun ViewingEventsFailed(): UserData? {
+        this.status = UserStatus.EVENTS_FAILED
+        this.error = null
+        return this
+    }
+    fun EmptyFlashNews(): UserData? {
+        this.status = UserStatus.EMPTY_FLASHNEWS
+        this.error = null
+        return this
+    }
+
+    fun ViewingFlashNewsFailed(): UserData? {
+        this.status = UserStatus.FLASHNEWS_FAILED
+        this.error = null
+        return this
+    }
+    fun EmptyNotification(): UserData? {
+        this.status = UserStatus.EMPTY_NOTIFICATION
+        this.error = null
+        return this
+    }
+
+    fun ViewingNotificationFailed(): UserData? {
+        this.status = UserStatus.NOTIFICATIONS_FAILED
+        this.error = null
+        return this
+    }
+
     interface UserStatus {
         companion object {
 
@@ -118,6 +152,12 @@ class UserData {
             val USER_OTP_FAILED =102
             val USER_OTP_VERIFICATION_SUCCESS=103
             val USER_OTP_vERIFICATION_FAILED =104
+            val EMPTY_EVENTS=105
+            val EVENTS_FAILED=106
+            val EMPTY_FLASHNEWS=107
+            val FLASHNEWS_FAILED=108
+            val EMPTY_NOTIFICATION=109
+            val NOTIFICATIONS_FAILED=110
 
         }
     }

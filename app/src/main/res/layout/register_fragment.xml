@@ -276,10 +276,11 @@
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
-                        android:entries="@array/states"
+                        android:entries="@{viewModel.state_lst}"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:onItemSelected="@{viewModel::onSelectItem}"/>
+                        android:onItemSelected="@{viewModel::onSelectItem}"
+                       />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -296,10 +297,11 @@
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                         android:layout_marginEnd="8dp"
-                        android:entries="@array/district"
+                        android:entries="@{viewModel.districtModelList}"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:onItemSelected="@{viewModel::onSelectItem}"/>
+                        android:onItemSelected="@{viewModel::onSelectItem}"
+                        />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -315,7 +317,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:entries="@array/chapter"
+                        android:entries="@{viewModel.chapter_mutableList}"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
@@ -384,7 +386,8 @@
                         android:layout_height="60dp"
                         android:src="@drawable/camera"
                         android:layout_marginTop="30dp"
-                        android:layout_marginStart="250dp">
+                        android:layout_marginStart="250dp"
+                        android:layout_marginLeft="250dp">
 
                     </de.hdodenhof.circleimageview.CircleImageView>
 
@@ -406,7 +409,8 @@
                             android:elevation="3dp"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            android:background="@drawable/red_leftrounded_bg">
+                            android:background="@drawable/red_leftrounded_bg"
+                            android:gravity="center_horizontal">
 
                         </TextView>
                         <TextView
@@ -420,7 +424,8 @@
                             android:textSize="20dp"
                             android:elevation="3dp"
                             android:textColor="@color/colorAccent"
-                            android:background="@drawable/white_rightrounded_bg">
+                            android:background="@drawable/white_rightrounded_bg"
+                            android:gravity="center_horizontal">
 
                         </TextView>
 

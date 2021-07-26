@@ -4,22 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.deltasoft.ihma.EventsFragment
+import com.deltasoft.ihma.view.home.EventsFragment
 import com.deltasoft.ihma.R
-import com.deltasoft.ihma.model.HomeModel
-import com.deltasoft.ihma.model.RecyclerViewClickListener
-import com.deltasoft.ihma.view.drawer.NewAboutUsFragment
-import com.deltasoft.ihma.viewmodel.AboutUsViewModel
+import com.deltasoft.ihma.model.alertModel.AlertModel
 import com.deltasoft.ihma.viewmodel.EventsViewModel
-import kotlinx.android.synthetic.main.single_course_layout.view.*
 import kotlinx.android.synthetic.main.single_home_events.view.*
 
 
 class EventsAdapter(val viewModel: EventsViewModel, val context: EventsFragment): RecyclerView.Adapter<EventsAdapter.EventsViewHolder>() {
-    var arrayList: ArrayList<HomeModel>? = null
+    var arrayList: ArrayList<AlertModel>? = null
 
 
-    fun setData(list: ArrayList<HomeModel>)
+    fun setData(list: ArrayList<AlertModel>)
     {
         arrayList = list
         notifyDataSetChanged()
@@ -47,8 +43,8 @@ class EventsAdapter(val viewModel: EventsViewModel, val context: EventsFragment)
 
 
     inner  class EventsViewHolder(val binding: View) : RecyclerView.ViewHolder(binding) {
-        fun bind(events: HomeModel){
-            binding.events_text_id.text = events.description
+        fun bind(events: AlertModel){
+            binding.events_text_id.text = events.name
 
         }
 

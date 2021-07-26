@@ -42,6 +42,8 @@ class RegistrationFragment : IlafBaseFragment() {
     var registerFragmentBinding: RegisterFragmentBinding?=null
 
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,6 +58,7 @@ class RegistrationFragment : IlafBaseFragment() {
         registerFragmentBinding?.fragment = this
         registerFragmentBinding?.viewModel = viewModel
         registerFragmentBinding?.errors = UserRegistrationErrors("")
+        viewModel.callRegistrationApi()
 
 
 //        //Image Uploading
@@ -90,6 +93,8 @@ class RegistrationFragment : IlafBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         doctor = view.doctor_id as TextView
         student = view.student_id as TextView
 
@@ -106,6 +111,9 @@ class RegistrationFragment : IlafBaseFragment() {
             doctor.setTextColor(getResources().getColor(R.color.colorAccent))
 
         })
+
+
+
 
 
 
@@ -130,10 +138,10 @@ class RegistrationFragment : IlafBaseFragment() {
                 }
 
                 UserData.UserStatus.USER_REGISTRATION_FAILED -> {
-
-                    IlafCommonAlert(
-                    requireActivity(),getString(R.string.registration_failed),
-                    getString(R.string.ok),
+                    IlafCommonAlert(requireActivity(),
+                        getString(R.string.registration_failed_error),
+                        getString(R.string.registration_failed),
+                        getString(R.string.ok),
                     null,
                     object : IlafCommonAlert.IlafDialogListener {
                         override fun onDialogPositiveClick() {
@@ -153,6 +161,7 @@ class RegistrationFragment : IlafBaseFragment() {
                     var error = it.getError()
                     if (error?.getErrorCode() == 100) {
                         error.errorMessage = getString(R.string.no_interbnet)
+
                     }
 
                     IlafCommonAlert(
@@ -177,6 +186,7 @@ class RegistrationFragment : IlafBaseFragment() {
         })
 
     }
+
 
 
 
@@ -261,6 +271,9 @@ class RegistrationFragment : IlafBaseFragment() {
         }
 
     }
+
+
+
 }
 
 

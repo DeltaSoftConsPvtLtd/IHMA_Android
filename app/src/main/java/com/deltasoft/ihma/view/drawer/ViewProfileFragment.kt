@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.deltasoft.ihma.R
-import com.deltasoft.ihma.databinding.ApplyFragmentBinding
 import com.deltasoft.ihma.databinding.FragmentViewProfileBinding
 import com.deltasoft.ihma.viewmodel.ProfileViewModel
 

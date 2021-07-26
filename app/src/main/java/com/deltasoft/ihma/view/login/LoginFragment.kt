@@ -2,11 +2,11 @@ package com.deltasoft.ihma.view.login
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
@@ -22,7 +22,10 @@ import com.deltasoft.ihma.model.UserData
 import com.deltasoft.ihma.utilities.IlafSharedPreference
 import com.deltasoft.ihma.utilities.Utility
 import com.deltasoft.ihma.view.LoginViewModel
-import com.deltasoft.ihma.view.SplashActivity
+import com.deltasoft.ihma.view.splash.SplashActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.Constants.TAG
+import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.login_fragment.view.*
 
 
@@ -47,12 +50,16 @@ class LoginFragment : IlafBaseFragment() {
         loginFragmentBinding?.viewModel = viewModel
         loginFragmentBinding?.fragment = this
         loginFragmentBinding?.errors = SignInErrors("")
+
+
         return loginFragmentBinding?.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initFCM()
 
         checkBox=view.rememberpwd_checkbox
 
@@ -62,19 +69,23 @@ class LoginFragment : IlafBaseFragment() {
                     (activity as SplashActivity).hideKeyboard()
                 }
                 UserData.UserStatus.LOGIN_SUCCESS -> {
-
                     if(checkBox.isChecked){
-                        IlafSharedPreference(requireContext()).setBooleanPrefValue(
-                            IlafSharedPreference.Constants.IS_LOGEDIN_USER,
-                            true)
+                        IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_LOGEDIN_USER,true)
+                        //findNavController().navigate(R.id.action_show_home_loggeduser)
+                        val action=LoginFragmentDirections.actionShowLoginGuestUser("LoggedUser")
+                        findNavController().navigate(action)
 
                     }else{
-                        IlafSharedPreference(requireContext()).clear()
+                        IlafSharedPreference(requireContext()).setBooleanPrefValue(IlafSharedPreference.Constants.IS_LOGEDIN_USER,false)
+                        //findNavController().navigate(R.id.action_show_home_loggeduser)
+                        val action=LoginFragmentDirections.actionShowLoginGuestUser("LoggedUser")
+                        findNavController().navigate(action)
                     }
 
-                    findNavController().navigate(R.id.action_show_home_guest)
+
 
                 }
+
                 UserData.UserStatus.USER_LOGIN_FAILED -> {
                     IlafCommonAlert(
                         requireActivity(),
@@ -117,6 +128,22 @@ class LoginFragment : IlafBaseFragment() {
         })
     }
 
+    private fun initFCM() {
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+           // val msg = getString(R.string.msg_token_fmt, token)
+            Log.d(TAG, token.toString())
+           // Toast.makeText(activity, token, Toast.LENGTH_SHORT).show()
+        })
+    }
 
 
     fun onRegisterClicked(view: View) {
@@ -125,6 +152,11 @@ class LoginFragment : IlafBaseFragment() {
 
     fun onForgotPassword(view: View) {
         findNavController().navigate(R.id.action_show_login_to_getEmailFragment)
+
+    }
+    fun onGuestUserClicked(view: View) {
+        val action=LoginFragmentDirections.actionShowLoginGuestUser("guestUser")
+        findNavController().navigate(action)
 
     }
 

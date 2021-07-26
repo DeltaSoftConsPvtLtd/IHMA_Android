@@ -5,14 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.deltasoft.ihma.R
-import com.deltasoft.ihma.model.CoursesModel
 import com.deltasoft.ihma.model.HomeModel
-import com.deltasoft.ihma.view.bottomNavigation.ApplyFragment
-import com.deltasoft.ihma.view.bottomNavigation.HomeFragment
-import com.deltasoft.ihma.viewmodel.ApplyViewModel
+import com.deltasoft.ihma.view.home.HomeFragment
 import com.deltasoft.ihma.viewmodel.NewHomeViewModel
-import kotlinx.android.synthetic.main.opmarketing.view.*
-import kotlinx.android.synthetic.main.single_course_layout.view.*
 import kotlinx.android.synthetic.main.single_home_collaborations.view.*
 
 class HomeCollaborationsAdapter(val viewModel: NewHomeViewModel, val context: HomeFragment): RecyclerView.Adapter<HomeCollaborationsAdapter.CollaborationsViewHolder>() {

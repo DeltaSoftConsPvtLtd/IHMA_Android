@@ -2,9 +2,6 @@ package com.deltasoft.ihma.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import com.deltasoft.ihma.model.CoursesModel
-import com.deltasoft.ihma.model.HomeModel
 
 class AboutUsViewModel(application: Application) : AndroidViewModel(application) {
 

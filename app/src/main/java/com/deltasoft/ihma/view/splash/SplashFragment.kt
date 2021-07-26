@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.deltasoft.ihma.R
 import com.deltasoft.ihma.base.IlafBaseFragment
 import com.deltasoft.ihma.databinding.SplashFragmentBinding
-import com.deltasoft.ihma.utilities.IlafSharedPreference
 import com.deltasoft.ihma.viewmodel.SplashViewModel
 
 class SplashFragment : IlafBaseFragment() {

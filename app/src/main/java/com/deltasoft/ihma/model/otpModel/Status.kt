@@ -1,9 +1,8 @@
 package com.deltasoft.ihma.model.otpModel
 
-import androidx.databinding.BaseObservable
 import com.google.gson.annotations.SerializedName
 
-open class Status(val anme: String? = null)  {
+data class Status(val anme: String? = null)  {
 
     @SerializedName("code")
     var code: Int? = null
