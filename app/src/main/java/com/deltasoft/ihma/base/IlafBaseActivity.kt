@@ -2,6 +2,8 @@ package com.deltasoft.ihma.base
 
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
+import com.razorpay.PaymentData
+import com.razorpay.PaymentResultWithDataListener
 
 open class IlafBaseActivity : AppCompatActivity() {
     fun hideKeyboard() {
@@ -13,5 +15,6 @@ open class IlafBaseActivity : AppCompatActivity() {
             )
         }
     }
+
 
 }

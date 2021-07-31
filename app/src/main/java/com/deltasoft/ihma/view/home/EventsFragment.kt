@@ -16,6 +16,8 @@ import com.deltasoft.ihma.databinding.FragmentEventsBinding
 import com.deltasoft.ihma.model.UserData
 import com.deltasoft.ihma.view.splash.SplashActivity
 import com.deltasoft.ihma.viewmodel.EventsViewModel
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_events.*
 
 
 class EventsFragment : Fragment() {
@@ -65,20 +67,7 @@ class EventsFragment : Fragment() {
                 }
                 UserData.UserStatus.EMPTY_EVENTS -> {
 
-                    IlafCommonAlert(
-                        requireActivity(),
-                        it.statusMessage ?: getString(R.string.no_events),
-                        getString(R.string.ok),
-                        null,
-                        object : IlafCommonAlert.IlafDialogListener {
-                            override fun onDialogPositiveClick() {
-                            }
-
-                            override fun onDialogNegativeClick() {
-
-                            }
-
-                        }).show()
+                    Snackbar.make(event_constraint, R.string.no_events, Snackbar.LENGTH_LONG).show()
 
                 }
                 UserData.UserStatus.EVENTS_FAILED -> {

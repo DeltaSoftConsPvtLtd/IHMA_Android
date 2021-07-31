@@ -18,6 +18,9 @@ import com.deltasoft.ihma.databinding.FragmentNotificationBinding
 import com.deltasoft.ihma.model.UserData
 import com.deltasoft.ihma.view.splash.SplashActivity
 import com.deltasoft.ihma.viewmodel.NotificationViewModel
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_events.*
+import kotlinx.android.synthetic.main.fragment_notification.*
 
 
 class NotificationFragment : Fragment() {
@@ -71,20 +74,7 @@ class NotificationFragment : Fragment() {
                 }
                 UserData.UserStatus.EMPTY_NOTIFICATION -> {
 
-                    IlafCommonAlert(
-                        requireActivity(),
-                        it.statusMessage ?: getString(R.string.no_notifications),
-                        getString(R.string.ok),
-                        null,
-                        object : IlafCommonAlert.IlafDialogListener {
-                            override fun onDialogPositiveClick() {
-                            }
-
-                            override fun onDialogNegativeClick() {
-
-                            }
-
-                        }).show()
+                    Snackbar.make(notification_constraint, R.string.no_notifications, Snackbar.LENGTH_LONG).show()
 
                 }
                 UserData.UserStatus.NOTIFICATIONS_FAILED -> {

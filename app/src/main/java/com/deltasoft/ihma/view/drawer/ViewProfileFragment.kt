@@ -12,6 +12,7 @@ import com.deltasoft.ihma.databinding.FragmentViewProfileBinding
 import com.deltasoft.ihma.viewmodel.ProfileViewModel
 
 
+
 class ViewProfileFragment : Fragment() {
 
     val viewModel: ProfileViewModel by viewModels()
@@ -33,6 +34,7 @@ class ViewProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
 

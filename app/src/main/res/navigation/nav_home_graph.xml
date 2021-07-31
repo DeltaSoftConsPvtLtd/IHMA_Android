@@ -32,6 +32,8 @@
         tools:layout="@layout/payment_fragment">
         <action android:id="@+id/action_payment_fragment_to_privacypolicy"
             app:destination="@id/privacypolicy_fragment" />
+<!--        <action android:id="@+id/action_payment_fragment_to_accountdetails"-->
+<!--            app:destination="@id/accountDetailsFragment" />-->
     </fragment>
 
     <fragment
@@ -168,6 +170,11 @@
         android:name="com.deltasoft.ihma.view.aboutUs.SixthDoctorFragment"
         android:label="fragment_sixth_doctor"
         tools:layout="@layout/fragment_sixth_doctor" />
+    <fragment
+        android:id="@+id/accountDetailsFragment"
+        android:name="com.deltasoft.ihma.view.drawer.AccountDetailsFragment"
+        android:label="fragment_account_details"
+        tools:layout="@layout/fragment_account_details" />
 
 
 </navigation>

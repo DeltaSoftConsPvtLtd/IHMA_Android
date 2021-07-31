@@ -44,7 +44,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="4dp"
-        android:text="Collaborations"
+        android:text="Welcome"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -58,11 +58,11 @@
         android:id="@+id/collaboration_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -71,13 +71,11 @@
         android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Research Activities"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Explore IHMA"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -92,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="4dp"
@@ -107,6 +105,7 @@
             android:id="@+id/events_id"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onAboutIHMAClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
@@ -163,6 +162,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onHomeopathyClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
@@ -220,6 +220,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onFlashNewsClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
@@ -283,7 +284,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -295,6 +296,7 @@
             android:id="@+id/doctor_1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onEventsClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
@@ -351,6 +353,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onArticlesClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 
@@ -407,6 +410,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
+            app:cardElevation="0dp"
             android:onClick="@{(v)->fragment.onNotificationClicked(v)}"
             app:cardBackgroundColor="@color/colorPrimary">
 

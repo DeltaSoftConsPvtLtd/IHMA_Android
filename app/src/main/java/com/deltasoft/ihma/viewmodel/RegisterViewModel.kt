@@ -256,6 +256,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         val stateJsonValue = jsonObject.getString("state")
         val districtvalue = jsonObject.getJSONArray("districts")
 
+
         for (i in 0 until districtvalue.length()) {
 
             districtList.add(districtvalue.getString(i))
@@ -273,7 +274,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
         else if(parent?.getId() == R.id.district_spinner)
         {
             districtValueSelected = parent.selectedItem as String
-            Log.d("District", stateValueSelected)
+            Log.d("District", districtValueSelected)
 
         }
         else{

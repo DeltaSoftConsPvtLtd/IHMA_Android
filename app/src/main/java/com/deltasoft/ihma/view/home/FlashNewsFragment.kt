@@ -16,6 +16,9 @@ import com.deltasoft.ihma.databinding.FragmentFlashNewsBinding
 import com.deltasoft.ihma.model.UserData
 import com.deltasoft.ihma.view.splash.SplashActivity
 import com.deltasoft.ihma.viewmodel.FlasNewsViewModel
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_events.*
+import kotlinx.android.synthetic.main.fragment_flash_news.*
 
 
 class FlashNewsFragment : Fragment() {
@@ -69,20 +72,7 @@ class FlashNewsFragment : Fragment() {
                 }
                 UserData.UserStatus.EMPTY_FLASHNEWS -> {
 
-                    IlafCommonAlert(
-                        requireActivity(),
-                        it.statusMessage ?: getString(R.string.no_flashnews),
-                        getString(R.string.ok),
-                        null,
-                        object : IlafCommonAlert.IlafDialogListener {
-                            override fun onDialogPositiveClick() {
-                            }
-
-                            override fun onDialogNegativeClick() {
-
-                            }
-
-                        }).show()
+                    Snackbar.make(flash_news_constraint, R.string.no_flashnews, Snackbar.LENGTH_LONG).show()
 
                 }
                 UserData.UserStatus.FLASHNEWS_FAILED -> {

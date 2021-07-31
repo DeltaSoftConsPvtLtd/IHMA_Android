@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="fragment"
+            type="com.deltasoft.ihma.view.drawer.AccountDetailsFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.drawer.AccountDetailsFragment"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Account Details "
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Please enter valid datas same as"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="on your account details"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/amount_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="400"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+        </TextView>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@drawable/cardview_bg"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+
+            <EditText
+                android:id="@+id/name_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Name"
+                android:textSize="15sp"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@drawable/cardview_bg"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+
+            <EditText
+                android:id="@+id/phone_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Enter Phone number"
+                android:maxLength="10"
+                android:textSize="15sp"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="@drawable/cardview_bg"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+
+            <EditText
+                android:id="@+id/email_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint=" Enter Email id"
+                android:textSize="15sp"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/verify_id"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:padding="3dp"
+            android:text="PAY NOW"
+            android:background="@drawable/lightblue_button_bg"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+    </ScrollView>
+</layout>

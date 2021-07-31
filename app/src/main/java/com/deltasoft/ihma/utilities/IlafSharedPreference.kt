@@ -212,6 +212,7 @@ class IlafSharedPreference {
             val PHONE="phone"
             val JOINING_DATE="joining_date"
             val SESSION_TOKEN="session_token"
+            val FEE_AMOUNT="fee_amount"
         }
     }
 }

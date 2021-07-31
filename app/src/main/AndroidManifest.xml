@@ -22,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.deltasoft.ihma.view.drawer.AccountDetailsFragment"
+            android:label="@string/app_name">
+        </activity>
         <service
             android:name="com.deltasoft.ihma.view.home.MyFirebseInstanceIdService"
             android:enabled="true"
@@ -30,6 +34,9 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_csVJVkO5hs47UI" />
     </application>
 
 </manifest>
